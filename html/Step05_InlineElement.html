@@ -1,3 +1,23 @@
+<!--
+#인라인요소
+인라인 요소 : inner text의 크기에 상관 없이 자신이 필요한 최소한의 크기만을 차지하며 왼쪽에서 오른쪽으로 가는 요소
+*text도 어떻게 보면 단어 하나하나가 인라인 요소임! 크기를 최소한으로 차지하며 왼쪽쪽으로 이동함
+
+#인라인요소 종류 : span, b, em, i
+
+#span 
+각각에 디자인 삽입 가능
+
+#b
+강조
+
+#em,i
+이탤릭체 
+
+#블럭요소는 여러개의 인라인요소를 가질 수 있다.
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +25,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step05_InlineElement.html</title>
 </head>
+
 <body>
     <h1>인라인 요소에 대해 알아보기</h1>
     <span>하나</span>
     <span>두울</span>
     <span>세엣</span>
     <span>span 요소는 인라인 요소 입니다.</span>
-    <h2>블럭 요소는 여러개의 인라인 요소를 자식 요소로 가질수 있습니다.</h2>
-    <p>블럭 요소는 여러개의 인라인 요소를 자식 요소로 가질수 있습니다.</p>
+
+    <!--아래 1,2,3의 차이점?-->
+    <!--3번 처럼 쓰는 경우 <span>이 둘러싸고 있는 inner text 각각의 요소에 디자인을 입힐 수 있음-->
+    <!--1-->
+    <h2>블럭 요소는 여러개의 인라인 요소를 자식요소로 가질 수 있습니다.</h2>
+    
+    <!--2-->
+    <p>블럭 요소는 여러개의 인라인 요소를 자식요소로 가질 수 있습니다.</p>
+    
+    <!--3-->
     <p>
-        <span style="color:red;">블럭</span> 요소는 여러개의 
-        <span style="font-weight: bold;">인라인</span> 요소를
-        <span style="font-style: italic;">자식</span> 요소로 가질수 있습니다.
+        <span style="color: seagreen;">블럭</span>요소는 여러개의 <span style="font-weight: bold;">인라인 </span>요소를 <span style="font-style: italic;">자식</span> 요소로 가질 수 있습니다.
     </p>
+
+    <!--b와 em과 i-->
     <h2>기본 스타일을 가지고 있는 인라인 요소 b, em, i</h2>
-    <p> <b>java</b> 와 <em>android</em> 앱 개발 <i>양성</i> 과정</p>
+    <p><b>java</b>와 <em>android</em> 앱 개발<i>양성</i> 과정</p>
 </body>
 </html>

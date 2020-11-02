@@ -1,8 +1,27 @@
-<!DOCTYPE html><!-- html5 문서 형식이라고 선언하는 선언부 -->
-<html lang="en"><!-- 주 사용 언어가 영어임을 나타낸다. -->
+<!--
+#html의 head와 body부분
+    -html의 head
+        1. 주요 설정 정보
+        2. 웹 페이지의 제목 <title></title> 사이에 입력하며 이는 실제 맨 윗상단 탭에 표시된다.
+        3. style 요소
+        4. script 요소
+    -html의 body
+        1. 웹브라우저에 표시할 내용과 script요소가 들어갈 수 있다.
+        2. script 요소가 들어갈 수 있다. (style은 x) 
+
+#javascript의 alert와 console.log 함수
+    -alert : 페이지가 로딩시에 알림창이 뜬다.
+    -console.log : 페이지가 로딩시에 console에 메세지를 남길 수 있다. 
+-->
+
+<!DOCTYPE html><!--html5 문서 형식이라고 선언하는 선언부-->
+<html lang="en"><!--주 사용 언어가 영어임을 나타낸다.-->
+
+<!--html은 head와 body부분으로 나뉘어진다.-->
+
 <head>
     <!--
-        [ head 요소에 포함 되는 내용 ]
+        [head요소에 포함 되는 내용]
         1. 주요 설정 정보
         2. 웹 페이지의 제목
         3. style 요소
@@ -10,19 +29,36 @@
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step02_basic2.html</title>
+    <title>Document</title>
 </head>
+
+
 <body>
-    <!-- body 요소에는 웹브라우저에 표시할 내용과 script 요소가
-    들어 갈수 있다. -->
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo earum deleniti, illo sequi quia eaque quibusdam eos doloremque aut cupiditate ipsam nam iste magni recusandae consequatur magnam voluptas et voluptatem?</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa magni porro repudiandae consequuntur sequi reiciendis quam quas, placeat tenetur veritatis, debitis nesciunt cumque aspernatur quod earum enim, quis error natus.</p>
+    <!--
+      body 요소에는 웹브라우저에 표시할 내용과 script요소가 들어갈 수 있다.
+    -->
+
+    <!--p(paragraph) 단락 -->
+    <!-- <p태그 안 lorem> -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Iste perspiciatis molestiae ut odio repellendus tempora 
+        enim atque laborum ducimus quae consequuntur animi cupiditate 
+        voluptatibus, qui cumque at architecto rerum quod.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Iste perspiciatis molestiae ut odio repellendus tempora 
+        enim atque laborum ducimus quae consequuntur animi cupiditate 
+        voluptatibus, qui cumque at architecto rerum quod.</p>  
+        
+    
+        
     <script>
-        //페이지가 로딩되는 시점에 해석되는 javascript 
+        //페이지가 로딩되는 시점에 해석되는 javascript
         alert("페이지 로딩이 완료 됩니다.");
-        console.log("하나");
-        console.log("두울");
-        console.log("세엣");
+        console.log("하나")
+        console.log("두울")
+        console.log("세엣")
+        
     </script>
 </body>
 </html>

@@ -1,3 +1,12 @@
+<!--
+#javascript영역
+    1. 크롬 - 우클릭 - 검사 - console : enter를 누르는 순간 자바 스크립트 코드 실행
+    2. p태그 안의 onclick 속성값으로 자바 스크립트가 올 수 있다. 
+    3. 실행 예정인 자바 스크립트를 모아놓고 일괄적으로 수행시킬 수 있다.(2번의 속성값에 함수를 호출하면 된다.)
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,33 +15,38 @@
     <title>hello.html</title>
 </head>
 <body>
-    <p id="one" 
-        onclick="document.querySelector('#one').innerText='안녕히 가세요.';">
-    안녕하세요</p>
-    <p id="two" 
-        onmouseover="document.querySelector('#two').innerText='김구라';">어쩌구...</p>
-    <p id="three" onmouseover="change();">저쩌구...</p>
 
-    <!-- 
-        아래 버튼을 클릭하면 id 가 result 로 지정된 p 요소에
-        "버튼을 클릭했네?"
-        라고 출력해 보세요. 
-    -->
-    <button onclick="clicked();">눌러보셈</button>
+
+    <!--안녕하세요를 클릭했을 때-->
+    <p id="one" onclick="document.querySelector('#one').innerText='안녕히 가세요.';">안녕하세요</p>
+
+    <!--어쩌구 위에 마우스를 갖다 댔을 때-->
+    <p id="two" onmouseover="document.querySelector('#two').innerText='김구라';">어쩌구</p>
+    <p id="three" onmouseover="change();">저쩌구</p>
+
+    <!--아래 버튼을 클릭하면 id가 result로 지정된 p요소에 버튼을 클릭했네?가 나오게 하기-->
+    <button id="btn" onclick="change2();">눌러보셈</button>
     <p id="result"></p>
 
     <script>
-        //함수는 특정 시점에 일괄 실행할 javascript 를 모아 놓을수 있다. 
+        
+        //실행 예정인 자바 스크립트를 모아놓고 일괄적으로 수행시킬 수 있다.
         function change(){
             document.querySelector("#three").innerText="해골";
             document.querySelector("#three").style.color="red";
             document.querySelector("#three").style.fontSize="100px";
         }
 
-        function clicked(){
+        function change2(){
             document.querySelector("#result").innerText="버튼을 클릭했네?";
+            document.querySelector("#btn").style.color="blue";
+            document.sele
         }
-    
+
     </script>
+
+
+
+
 </body>
 </html>

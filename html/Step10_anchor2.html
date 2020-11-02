@@ -1,3 +1,26 @@
+<!--
+    #container의 폭 %로 조절하기
+        .container{
+                width: 90%; 
+                margin-left: auto;
+                margin-right: auto;
+        }
+
+    #anchor의 다른기능
+        1.책갈피 기능
+        2.mobile 기능에서 사용할 수 있는 핸드폰, 메일 연결
+        3.자바 스크립트 실행
+
+    #javascript영역과 실행 시점
+        1. body의 <javascript> 요소 : 페이지가 로딩되는 시점
+        2. body의 <a href="javascript:alert('hello')">눌러보셈</a> : 누를 때마다 시점
+        
+
+    #웹브라우저를 만들 때 주로 사용하는 기능
+    a, form, table
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,37 +29,43 @@
     <title>Step10_anchor2.html</title>
     <style>
         .container{
-            width: 90%;
+            width: 90%; 
             margin-left: auto;
             margin-right: auto;
         }
+
         .spacer{
             height: 500px;
-            background-color: yellow;
+            background-color: #a8fffb;
         }
     </style>
+
+
 </head>
 <body>
+    <script>
+        alert('페이지가 로딩되는 시점'); //페이지가 로딩되는 시점에 한번 실행된다.
+    </script>
     <div class="container">
-        <h1>anchor 의 다른 기능</h1>
+        <h1>anchor의 다른기능</h1>
         <ul>
-            <!-- 책갈피 기능 -->
+            <!--anchor의 책갈피 이름-->
             <li><a href="#one">one</a></li>
             <li><a href="#two">two</a></li>
             <li><a href="#three">three</a></li>
-            <!-- javascript 실행-->
-            <li><a href="javascript:alert('hello~');">눌러보셈</a></li>
-            <!-- mobile 기기에서 테스트 가능한 기능 -->
-            <li><a href="tel:010-1111-2222">전화걸기</a></li>
-            <li><a href="mailto:aaa@naver.com">이메일 쓰기</a></li>
+            <!--mobile 기기에서 테스트 가능한 기기-->
+            <li><a href="tel:010-3072-6383">홍주 언니에게 전화걸기</a></li>
+            <li><a href="mailto:sjy1218v@naver.com">메일보내기</a></li>
+            <!--자바 스크립트 실행-->
+            <li><a href="javascript:alert('hello')">눌러보셈</a></li><!--링크를 누를 때마다 javascript가 실행된다.-->
         </ul>
         <div class="spacer"></div>
-        <p id="one">one 입니다.</p>
+        <p id="one">one입니다.</p>
         <div class="spacer"></div>
-        <p id="two">two 입니다.</p>
+        <p id="two">two입니다.</p>
         <div class="spacer"></div>
-        <p id="three">three 입니다.</p>
-        <div class="spacer"></div>
+        <p id="three">three입니다.</p>    
     </div>
+    
 </body>
 </html>

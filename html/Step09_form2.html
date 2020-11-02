@@ -1,3 +1,57 @@
+<!--
+#<form action>과 <button=”submit”>
+action의 속성값으로 서버주소를 넣고 버튼을 눌러 데이터가 서버쪽으로 넘어갈 수 있도로 도와준다.
+
+#레이블 연결 방법
+    방법1. <label> ~ </label>로 요소를 감싸주거나 (암시적 연결, 접근성이 떨어진다.)
+    방법2. 해당 태그의 id 값을 <label for="id 값">으로 연결해 주면 된다.(명시적 연결, 접근성이 향상된다.)
+            방법1 예) <form action> → <lable for>,<input type id name>, <button type>
+            방법2 예) <form action> → <lable> →  <input type id name>, <button type>
+
+#form 자손 lable 유형2가지
+<form action> → <lable for>,<input type id name>, <button type> //명시적 연결
+<form action> → <lable> →  <input type id  name>, <button type> //암시적 연결 
+
+#아래 코드에서 중점적으로 봐야할 form의 자손 (form의 자손이므로 모두 각 데이터값들이 서버로 넘어간다.)
+필드셋 : <form action> →  <fieldset> →  <legend> →  <lable for>,<input type id name>,<button type>  
+라디오(한개만 선택), 체크박스(여러개선택) : <form action> → <lable> → <input type="radio","checkbox" value checked> 
+화살표 클릭 아래로 내려가는 선택창(한개만 선택) :<form action> → <lable for>, <select name id> → <option value>
+스크롤바 선택창(여러개 선택):<form action> → <lable for>, <select name id multiple> → <option value>
+화살표 클릭 아래로 내려가는 선택창 with라벨 : <form action> → <lable for>,<optgroup lable> → <option>
+서버로 파일 넘기기 : <form action> → <lable for>,<input type="file" name id>   
+텍스트 area : <form action> → <lable for>,<textarea id, cols, rows>
+버튼 눌러 서버로 보내기 : <form action> -> <button type="submit">
+취소 버튼 눌러 reset하기 : <form action> -> <button type="reset">
+-> form 은 실제로 제일 바깥라인에 한번만 적으면 된다!
+
+#value?
+라디오(한개만 선택), 체크박스(여러개선택) : <form action> → <lable> → <input type="radio","checkbox" value checked> 
+스크롤바 선택창(여러개 선택):<form action> → <lable for>, <select name id multiple> → <option value>
+화살표 클릭 아래로 내려가는 선택창 with라벨 : <form action> → <lable for>,<optgroup lable> → <option>
+이 3개의 공통점은? 바로 value를 쓴 것! 
+
+value? value는 서버에 데이터를 전달할 때 데이터값으로 가는 내용이다. 
+    └input type이 text, password 이거나 속성이 textarea인 경우 텍스트창이 생겨 그 텍스트창에 입력한 것이 데이터로 간다
+    └체크박스,라디오박스등등 선택지를 선택해야 하는 경우 value를 써주지 않으면 inner text가 서버로 넘어간다. value를 명시해주면 value값이 서버로 넘어간다.
+
+#input에 
+    radio : 여러개의 선택지 중 한개만 선택 가능(한번 선택하거나 checked 되어있으면 무조건 선택해야하는 선택지!)
+    checkbox : 여러개의 선택지 중 여러개 선택 가능 
+    
+    
+#input의 속성 type -> <form action> → <lable> → <input type="radio","checkbox", checked>
+    checked : 속성값을 안써도 된다. checked 되어있는 선택지쪽으로 이미 선택 되어있다. 서버전송도 선택된 선택지로 가진다.
+
+#fieldset, legend
+    -사용이유?
+        inner text는 모두 화면에 표시되며, 시각장애인들을 위해 스크린리더기가 읽어준다
+        이때 남,녀 선택 하는 선택지 부분에 있어서 '남' '여'로 읽어주게 될 시 시각장애인은 혼동이 올 수 있다
+        따라서 fieldset과 legend를 이용해 묶어서 표현해주도록 하자
+        *화면에서 실제로 tab해서 지정되는 부분들을 읽어준다.
+    
+    -fieldset: 웹 양식의 여러 컨트롤과 레이블(<label>)을 묶을 때 사용합니다.
+    -legend : 묶음 제목 적기 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,57 +62,58 @@
 <body>
     <h1>회원가입 폼 입니다.</h1>
     <form action="signup.jsp">
-        <label for="email"></label>이메일</label>
-        <input type="text" id="email" name="email"/><br/>
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email"><br>
         <fieldset>
             <legend>성별 정보 선택</legend>
             <label>
-                <input type="radio" name="gender" value="man" checked/> 남자
+                <input type="radio" name="gender" value="man" checked>남자
             </label>
-            <label>
-                <input type="radio" name="gender" value="woman" /> 여자
+    
+            <label> 
+                <input type="radio" name="gender" value="woman">여자
             </label>
         </fieldset>
         <fieldset>
             <legend>취미 정보 선택</legend>
             <label>
-                <input type="checkbox" name="hobby" value="piano"/> 피아노 
+                <input type="checkbox" name="hobby" value="piano" checked>피아노
             </label>
             <label>
-                <input type="checkbox" name="hobby" value="carom"/> 당구
+                <input type="checkbox" name="hobby" value="carom">당구
             </label>
             <label>
-                <input type="checkbox" name="hobby" value="beer" /> 맥주
+                <input type="checkbox" name="hobby" value="beer">맥주
             </label>
             <label>
-                <input type="checkbox" name="hobby" value="etc" /> 기타
+                <input type="checkbox" name="hobby" value="etc">기타
             </label>
         </fieldset>
-        
+        <br/>
         <label for="job">직업선택</label>
-        <select name="job" id="job">
-            <option value="">선택</option>
+        <select name="job" id="job"><!--select 화살표로 내려서 선택지 볼 수 있으며 한개만 선택할 수 있음-->
+            <option value="">선택</option><!--아무것도 선택하지 않으면 빈 문자열이 서버로 전송된다. -->
             <option value="teacher">선생님</option>
             <option value="doctor">의사</option>
             <option value="developer">개발자</option>
             <option value="etc">기타</option>
         </select>
         <br/>
-        <label for="lunch">점심 메뉴 선택</label>
-        <select name="lunch" id="lunch" multiple>
-            <!-- option 요소에 value 가 없으면 innerText 가 value  로 전송된다. -->
-            <option>자장면</option>
-            <option>짬뽕</option>
-            <option>군만두</option>
-            <option>탕수육</option>
+        <label for="lunch">점심 메뉴 선택</label><br>
+        <select name="lunch" id="lunch" multiple><!--multiple 의 역할 스크롤바로 선택지 볼 수 있으며 ctrl을 누른채로 여러개를 선택 할 수 있음-->
+            <option value="">선택</option>
+            <option value="m1">짜장면</option><!--value 속성 : 서버의 데이터 값으로 value속성이 전송된다.-->
+            <option value="m2">짬뽕</option><!--value를 지정하지 않으면? inner text가 전송된다.-->
+            <option value="m3">군만두</option>
+            <option value="m4">탕수육</option>
         </select>
         <br/>
         <label for="coffee">커피 선택</label>
         <select name="coffee" id="coffee">
-            <optgroup label="에스프레소">
+            <optgroup label="에스프레소"><!--optgroup 선택지 내에서 카테고리를 만들어 준다.-->
                 <option>아메리카노</option>
                 <option>카페라떼</option>
-                <option>카페모카</option>
+                <option>카푸치노</option>
             </optgroup>
             <optgroup label="프라프치노">
                 <option>카라멜 프라프치노</option>
@@ -67,15 +122,16 @@
             </optgroup>
         </select>
         <br/>
-        <label for="file">첨부 파일</label>
+        <label for="file">첨부 파일</label><!--웹브라우저에서 특정파일이 선택될 수 있도록 열리고 '선택된 파일 없음'이 기본으로 표시된다.-->
         <input type="file" id="file" name="file"/>
         <br/>
 
         <label for="comment">하고 싶은 말</label><br/>
-        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea><!--textarea실제 서버로 전송될 때 comment=HI%0D%0AHello%0D%0A안녕 이런식으로 개행기호까지 전송된다. -->
         <br/>
+
         <button type="submit">가입</button>
         <button type="reset">취소</button>
-    </form>
+    <form>
 </body>
 </html>

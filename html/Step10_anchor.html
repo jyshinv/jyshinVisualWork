@@ -1,3 +1,24 @@
+<!--
+    #홈페이지 : https://docs.emmet.io/ - Cheat Sheet 참고해서 html 편리하게 작성하는 법 써있다.
+    
+    #하이퍼링크 만들기
+    <a href="절대경로/상대결로">
+
+    #ul과 li로 깔끔한 하이퍼링크 만들기
+    1. 먼저 ul과 li를 만들어 놓는다
+    2. li사이에 넣고싶은 a요소를 넣는다. 
+        <ul>
+            <li><a href="hello.html">hello.html로 가기</a></li>
+            <li><a href="http://14.63.164.99/student.html">공부방</a></li>
+            <li><a href="https://daum.net">다음으로 가기</a></li>
+            <li><a href="C:\acorn2021\visual_work">visual작업공간 가기</a> </li>
+            <ul>
+
+    #인라인요소와 블럭요소와의 관계
+        인라인 요소는 원래 블럭 요소를 자식 요소로 가질 수 없다.
+        단 a요소만 예외적으로 div같은 블럭요소를 자식요소로 가질 수 있다. 
+
+            -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,38 +26,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step10_anchor.html</title>
     <style>
-        /* 가운데 정렬된 컨테이너 */
         .container{
             width: 768px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: auto; /*mft 탭으로 자동완성 가능*/
+            margin-right: auto; /*mri 탭으로 자동완성 가능*/
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>a(anchor) 요소는 하이퍼링크, 책갈피, javascript 등을 수행할때 사용한다.</h1>                
+    <!--모든 자동완성 시 자동완성 preview가 꺼지면 ctrl+space로 복구 가능하다.-->
+    <div class="container"></div><!--div.a 탭으로 자동완성 가능-->
+    <div class="a b c"></div><!--div.a.b.c 탭으로 자동완성 가능 이런식으로 클래스에 여러 속성값이 들어갈 수 있다.-->
+    <div class="container" id="one"></div><!--div#아이디명으로 아이디 생성 가능 한 페이지에서 유일해야한다.-->
+    
+    <div></div><!--div*5로 자동완성 가능-->
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+    <ul><!--ul>li로 자동완성 가능-->
+        <li></li>
+    </ul>
+
+    <div>div입니다.</div><!--div{div입니다.}*5로 자동완성 가능-->
+    <div>div입니다.</div>
+    <div>div입니다.</div>
+    <div>div입니다.</div>
+    <div>div입니다.</div>   
+
+    <div>div1입니다.</div><!--div{div$입니다.}*5로 자동완성 가능-->
+    <div>div2입니다.</div>
+    <div>div3입니다.</div>
+    <div>div4입니다.</div>
+    <div>div5입니다.</div>
+
+    <ul><!--ul>li{li$}*5로 지동완성 가능-->
+        <li>li1</li>
+        <li>li2</li>    
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+
+    <div class="container"><!--css로 가운데정렬과 width설정 해놓음!-->
+        <h1>요소는 하이퍼링크, 책갈피, javascript 등을 수행할 때 사용한다.</h1>
         <ul>
-            <!-- 현재 위치를 기준으로 이동하는 상대경로 이동 -->
-            <li><a href="hello.html">hello.html 로 가기</a></li>
-            <!-- 웹에서의 절대 경로 이동-->
+            <!--현재 위치를 기준으로 이동하는 상대경로 이동-->
+            <li><a href="hello.html">hello.html로 가기</a><!--a탭으로 자동완성 가능--></li>
+            
+            <!--웹에서의 절대 경로 이동-->
             <li><a href="http://14.63.164.99/student.html">공부방</a></li>
-             <!-- 파일 시스템에서 절대 경로 이동 -->
-            <li><a href="C:\acorn2021\visual_work\html\hello.html">hello.html 로 가기</a></li>
-            <!-- 웹에서의 절대 경로 이동 -->
-            <li><a href="https://daum.net">daum 으로 가기</a></li>
-            <!-- 이미지에 링크를 걸수도 있다. -->
-            <li><a href="http://14.63.164.99"><img src="images/kim1.png"/></a></li>
+            <li><a href="https://daum.net">다음으로 가기</a></li>
+            
+            <!--파일 시스템에서 절대 경로 이동-->
+            <li><a href="C:\acorn2021\visual_work">visual작업공간 가기</a> </li>
+            
             <li>
-                <a href="http://14.63.164.99">
-                    <!-- 
-                        인라인 요소는 월래 블럭 요소를 자식 요소로 가질수 없다.
-                        단 a 요소만 예외적으로 div 같은 블럭요소를 자식요소로 
-                        가질수 있다.
-                    -->
+                <a href="http://14.63.164.99/student.html">
                     <div>
                         <h3>이동하기</h3>
-                        <img src="images/kim1.png"/>
+                        <img src="images/kim1.png">
+                    </div>
+                </a>
+            </li>
+        </ul>  
+        
+        <h1>하이퍼링크와 이미지 같이 사용하기</h1>
+        <ul>
+            <li><a href="C:\acorn2021\visual_work">visual작업공간 가기<img src="images/kim1.png"></a> </li>
+            
+            <li>
+                <a href="http://14.63.164.99/student.html"><!--a요소만 예외적으로 div같은 블럭요소를 자식요소로 가질 수 있다.-->
+                    <div>
+                        <h3>이동하기</h3>
+                        <img src="images/kim1.png">
                     </div>
                 </a>
             </li>

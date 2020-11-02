@@ -1,3 +1,18 @@
+<!--
+#css 위아래 마진과 좌우 마진 한꺼번에 넣는 방법
+    .container{
+            width: 768px;
+            margin: 0 auto;
+    }
+
+#벡터이미지
+svg editor 검색 - 저장 후 열어서 - 우클릭 - 페이지소스 열기 - 페이지 소스 복사 
+*벡터이미지는 파일을 확대해도 깨지지 않는다. 따라서 앱,웹 개발 시 이미지를 svg로 많이 사용한다. 
+
+#벡터 이미지(.svg) 넣는 방법
+방법1) img요소 이용해서 svg파일 있는 곳의 경로 넣기
+방법2) svg요소 이용해서 직접 svg파일 코드 복사해 넣기 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +30,10 @@
 <body>
     <div class="container">
         <h1>이미지를 벡터 그래픽으로 만들어서 사용할 수 있다.</h1>
+        <h2>방법1 img요소 이용해서 이미지 파일 경로 넣기</h2>
         <img src="images/tiger.svg"/>
+
+        <h2>방법2 svg요소 이용해서 직접 집어넣기</h2>
         <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
             <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
             <g>
@@ -50,4 +68,5 @@
            </svg>
     </div>
 </body>
-</html>
+</html> 
+

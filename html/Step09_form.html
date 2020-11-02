@@ -1,3 +1,30 @@
+
+<!--
+#form의 자식요소
+label, input, button
+
+#label 속성
+    for : input의 id속성과 같아야 연결된다. lable로서의 역할을 수행할 수 있다. ★★★★★
+
+#input 속성
+    type : type에 따라 입력되는 타입이 결정된다. ex) text, password가 있음
+    id
+    name
+
+#button 속성
+    type : type에 따라 입력되는 타입이 결정된다. ex) text, password가 있음
+
+#button 
+    -속성종류
+    type : type에 따라 버튼 기능이 다르게 동작한다.
+        1. button : 클릭할 수 있는 기능
+
+        2. submit : 데이터를 전송할 수 있는 기능 
+            -> 어디로 전송할까? type값이 submit이면 form 속성의 action값으로 버튼을 누르는 순간 데이터를 전송한다. 
+
+        3. reset : 데이터를 리셋하는 기능
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +35,11 @@
 <body>
     <h1>폼 요소 작성하기</h1>
     <form action="login.jsp">
-        <label for="email">이메일</label>
-        <input type="text" id="email" name="email">
+        <label for="email">이메일</label><!--lable의 for속성값은 input속성의 id속성값과 같아야 lable요소로써 기능을 한다.★★★★중요. -->
+        <input type="text" id="email" name="email"><!--name은 입력한 내용을 서버에 전송하면 전송내용을 읽어내야 하는데 그때 구별해주는 별명이다.-->
         <label for="pwd">비밀번호</label>
         <input type="password" id="pwd" name="pwd">
-        <button type="submit">로그인</button>
+        <button type="submit">로그인</button><!--버튼을 누르는 순간 form의 action값으로 이동한다.-->
     </form>
 </body>
 </html>

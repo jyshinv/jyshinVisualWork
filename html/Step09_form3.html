@@ -1,3 +1,39 @@
+<!--
+#컨테이너 : 네이버나 다음 보면 왼쪽과 오른쪽 간격이 같고 주요 컨텐츠가 가운데 정렬 되어있다. 이때 이 가운데 정렬 된 컨텐츠를 담은 박스를 컨테이너라고 한다.
+    ㄴ컨테이너는 div로 구현한다.
+    ㄴ컨테이너는 폭과 margin을 정해주어야 한다. 
+    ㄴ이렇게 구현해주면 가운데 정렬 효과와 화면을 줄여도 주요 컨텐츠 내용이 쪼그라들지(?) 않는다. EX) 텍스트가 아랫줄로 내려가지 않음 아예 가려짐
+
+#table요소를 이용해 form요소 줄맞추기
+1. 먼저 어떻게 넣을 지 그려보기
+2. 행과 열 생각하고 <table> -> <tr> -> <td>,<th> 완성해두기
+3. 그 안에 <form>의 자손들 넣기 
+4. 최종 결과(form에서 아이디,비번,submit버튼을 구성한다고 했을 때)
+    이렇게 해주면 된다!
+    <form action="login2.jsp">
+            <table>
+                <tr>
+                    <td><label for="email2">이메일</label></td>
+                    <td><input type="email" name="email" id="email2"></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd2">비밀번호</label></td>
+                    <td><input type="password" name="pwd" id="pwd2"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">로그인</button></td>
+                </tr>
+            </table>    
+    </form>
+
+
+#컨테이너 div로 구현하기 
+1. <head> -> <style> -> .container{width; margin-left=auto; margin-right=auto} 지정해주기
+2. <div class=container> -> 넣고싶은 컨텐츠 내용 넣기!
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,39 +41,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step09_form3.html</title>
     <style>
+        /* 
+        이렇게 쓰면 모든 div의 디자인이 바뀌어버린다.
+        div{  
+            width : 768px; 
+            background-color: coral;
+        }  
+        */
+
+        /*.container : 클래스속성의 속성값이 container인것을 찾는다. */
         .container{
-            width: 768px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: yellow;
-        }
+            /*width로 div 폭조정을 해준다.*/ 
+            width : 768px; 
+
+            /*왼쪽 margin과 오른쪽 margin을 auto로 해두면 왼쪽과 오른쪽 간격이 똑같아진다. 가운데 정렬 효과!*/
+            margin-left: auto; 
+            margin-right: auto; 
+
+            /*뒷배경 색을 지정해준다.*/
+            background-color: coral;
+        } 
+        
+
     </style>
 </head>
 <body>
-    <div class="container">
+    <h1>--->table요소를 사용해서 가운데 정렬전</h1>
+    <h1>table 요소를 이용해서 form 요소의 줄 맞추기 전</h1>
+    <form action="login.jsp">
+        <label for="email">이메일</label>
+        <input type="text" name="email" id="email"/>
+        <br>
+        <label for="pwd">비밀번호</label>
+        <input type="password" name="pwd" id="pwd">
+        <br>
+        <button type="submit">로그인</button>    
+    </form>
+    
+    <br>
+    <h1>table 요소를 이용해서 form 요소의 줄 맞추기 후</h1>
+    <form action="login2.jsp">
+        <table>
+            <tr>
+                <td><label for="email2">이메일</label></td>
+                <td><input type="email" name="email" id="email2"></td>
+            </tr>
+            <tr>
+                <td><label for="pwd2">비밀번호</label></td>
+                <td><input type="password" name="pwd" id="pwd2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">로그인</button></td>
+            </tr>
+        </table>    
+    </form>
+    
+    <div class="container"> 
         클래스 속성의 값이 container 인 div 입니다.
     </div>
     <div>
-        기냥 div  입니다.
+        그냥 div입니다.
     </div>
-    <div class="container">
-        <h1>table 요소를 이용해서 form 요소의 줄 맞추기</h1>
+    
+    
+    <div class="container"><!--div의 class속성을 container로 해주고 css에서 폭과 마진을 정해준다.-->
+        <h1>--->table 요소를 이용해서 가운데 정렬 후</h1>
         <form action="login.jsp">
+            <h1>div를 이용해 가운데 정렬 후</h1>
+            <label for="email">이메일</label>
+            <input type="text" name="email" id="email"/>
+            <br>
+            <label for="pwd">비밀번호</label>
+            <input type="password" name="pwd" id="pwd">
+            <br>
+            <button type="submit">로그인</button>    
+        </form>
+    
+        <br>
+        <h1>table 요소를 이용해서 form 요소의 줄 맞추기 후</h1>
+        <form action="login2.jsp">
             <table>
                 <tr>
-                    <td><label for="email">이메일</label></td>
-                    <td><input type="text" name="email" id="email"/></td>
+                    <td><label for="email2">이메일</label></td>
+                    <td><input type="email" name="email" id="email2"></td>
                 </tr>
                 <tr>
-                    <td><label for="pwd">비밀번호</label></td>
-                    <td><input type="password" name="pwd" id="pwd"/></td>
+                    <td><label for="pwd2">비밀번호</label></td>
+                    <td><input type="password" name="pwd" id="pwd2"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td><button type="submit">로그인</button></td>
                 </tr>
-            </table>
+            </table>    
         </form>
     </div>
+    
+
 </body>
 </html>
+

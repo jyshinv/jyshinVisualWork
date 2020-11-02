@@ -1,3 +1,23 @@
+<!--
+#블럭요소의 종류
+html, h, p, div
+
+#h태그
+h1이 가장 크고, h6가 가장 작다.
+
+#p태그
+문단을 나타낼 때 사용한다. inner content가 한줄로 나타난다.
+
+#div태그
+문단을 나타낼 때 사용한다. 여러 요소들을 묶을 때 사용한다.
+
+#p와 div 차이점 
+p요소와 div요소의 차이점
+p요소는 위아래 margin이 있음 -- css를 통해 언제든지 margin을 재정의(override)할 수 있음
+div요소는 위아래 margin이 없음 -- 어떤 contents를 가지고 있는 역할, 디자인적인 요소가 없음
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,26 +26,33 @@
     <title>Step04_BlockElement.html</title>
 </head>
 <body>
-    <h1>hn 요소도 블럭 요소 입니다.</h1>
+    <html>html 요소도 블럭요소입니다.</html>
+    <h1>h1 요소</h1>
     <h2>h2 요소</h2>
     <h3>h3 요소</h3>
     <h4>h4 요소</h4>
     <h5>h5 요소</h5>
-    <h6>h6 요소(h1~h6 까지 있습니다.)</h6>
-    <p>p 요소도 블럭 요소 입니다.</p>
-    <p>p2</p>
-    <p>p3</p>
+    <h6>h6 요소(요소 h1~h6까지 있습니다.)</h6>
+    <p>p 요소도 블럭 요소 입니다.</p><p>p2</p><p>p3</p>
     <p>
-        첫번째 줄<br/> <!-- br 요소는 개행 기호 입니다. -->
+        첫번째 줄<br/>
         두번째 줄<br/>
         세번째 줄
     </p>
     <div>div 요소는 문단을 나타낼때 사용합니다.</div>
-    <div>div 요소도 블럭 요소 입니다.</div>
-    <div>
+    <div>div요소도 블럭 요소입니다.</div>
+    <div><!--자식요소를 묶어놓고 사용하기 좋아서 div를 사용함-->
         <h1>오늘의 운세</h1>
-        <p>동쪽으로 가면 <br/> 귀인을 만나요...</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae inventore cum quo reiciendis doloribus ea quibusdam ex, enim quisquam culpa harum veniam earum officiis eveniet laboriosam repudiandae perspiciatis sit.</p>
+        <p>동쪽으로 가면><br/>귀인을 만나요</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore molestiae nihil itaque 
+            quis consequatur nobis unde optio tenetur pariatur vel, 
+            excepturi placeat eius dicta ipsa iure cumque quae nulla natus.</p>
     </div>
+
+    <!--
+        p요소와 div요소의 차이점
+        p요소는 위아래 margin이 있음 -- css를 통해 언제든지 margin을 재정의(override)할 수 있음
+        div요소는 위아래 margin이 없음 -- 어떤 contents를 가지고 있는 역할, 디자인적인 요소가 없음
+    -->
 </body>
 </html>
