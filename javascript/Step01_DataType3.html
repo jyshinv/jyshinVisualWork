@@ -1,0 +1,57 @@
+<!--
+    #데이터타입
+        1. object Type : 1개의 변수로 여러 datatype의 data를 대입가능
+            -> (형태) var 변수명 = {key1:value, key2:value...};
+            -> (알아두기) 변수명.key값 으로 저장된 값 참조 가능한다.
+            -> (알아두기) array type과는 다르게 순서가 중요하지 않을 때 사용한다.
+            -> (규칙) key와 value 개념이므로 =아닌 :를 쓴다.
+            -> (규칙) key와 value는 ,로 구분한다.
+
+        2. object Type에 들어갈 수 있는 value확인
+            {key1:1, key2:2, key3:3....}
+            {key1 : "kim", key2:"lee"}
+            {key1 : arr[0], key2: arr[1]} :배열타입 데이터가 들어갈 수 있다.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_DataType3.html</title>
+</head>
+<body>
+
+    <script>
+        //회원 한명의 정보라고 가정하자
+        var num = 1;
+        var name = "김구라";
+        var addr = "노량진";
+
+
+        //다른 data type을 활용하면 1개의 변수명으로 
+        //회원 한명의 정보를 관리할 수 있다.
+        //object 타입
+        var mem1={num:1, name:"김구라", addr:"노량진"};
+        var mem2={num:2, name:"해골", addr:"노량진"};
+        var mem3 = {num:num, name:name, addr:addr}; //: 앞은 key이름, :뒤는 script상단의 변수
+        var info1={empno:8000, ename:"SMITH", sal:5000};
+
+        //object 타입 key를 이용하여 value 참조하기
+        var a = mem1.num;
+        var b = mem2.name;
+        var c = mem3.addr;
+
+        //object type의 key를 이용하여 value 수정하기
+        mem1.num = 999;
+        mem1.name = "jaesungLove";
+
+        //object type의 key를 이용하여 함수에서 바로 사용하기
+        alert(mem1.name);
+
+
+    </script>
+    
+</body>
+</html>

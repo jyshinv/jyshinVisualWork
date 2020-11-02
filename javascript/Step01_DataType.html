@@ -1,17 +1,46 @@
+<!--
+    #변수의 식별자 규칙
+        1. 영문자로 시작한다.(보통 소문자로 시작한다.)
+        2. 예약어를 쓸 수 없다.
+        3. 식별자는 숫자로 시작할 수 없다.
+    
+    #데이터타입
+        1. 숫자 type(Number type)
+        2. 문자 type(String type)
+
+    #연산
+        1. 변수로의 연산이 가능하다
+        2. 숫자로의 연산은 '산술연산자' ex)10+1,a+b
+        3. 문자의 연결은 '연결연산자'   ex)'kim' + 'lee'
+    
+        
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Step01_DataType.html</title>
 </head>
 <body>
-    <script>
+
+    <script>//자바 스크립트 공간입니다.
+
+        //변수 선언 
+        //숫자 타입 변수 선언
         var a = 10;
         var b = 10.1;
+
+        //a문자 타입 변수 선언(큰따옴표, 작은따옴표 둘다 사용 가능)
         var c = "kim";
-        var d = "lee";
-        var myName = "jyshin";
+        var d = "lee"; 
+        var myName = 'jyshin';
+
+        //연산을 할 때 변수명으로 연산을 할수도 있다.
+        var result = 10-1;
+        var result = a-1;
+        var result2 = c+d; 
     </script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!--
+    #데이터 타입
+        1. 배열 타입(array type)
+            ->(형태)var 변수명 = [value1, value2....];
+            ->(알아두기)object type과는 다르게 순서가 중요할 때 사용한다.
+            ->(규칙)인덱스를 이용하여 참조하며 인덱스는 앞에서부터 0부터 시작한다.
+
+        2. 배열타입에 들어갈 수 있는 value확인하기
+            [10, 20, 30...]
+            ["kim","lee"...]
+            [true, false]
+            [{},{},{}...] : ★object 타입 데이터가 들어갈 수도 있다.
+            [[],[],[]] : ★배열 타입 데이터가 들어갈 수도 있다.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_DataType4.html</title>
+</head>
+<body>
+
+    <script>
+
+        //여러개의 값을 순서있게 관리하는 array type
+        //친구의 이름을 순서대로 하나의 묶음으로 관리하기
+        var names = ["김구라","해골","원숭이","주뎅이","덩아리"];
+
+        //부서의 번호를 순서대로 하나의 묶음으로 관리하기
+        var nums = [10,20,30,40];
+
+        //인덱스를 이용한 참조(참조해서 값 불러내기)
+        var a = names[0];
+        var b = names[1];
+        var c = nums[0];
+        var d = nums[1];
+
+        //참조해서 값 수정하기
+        names[0] = "김재성";
+        nums[0] = 11;
+
+
+    </script>
+</body>
+</html>
