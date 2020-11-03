@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //버튼을 누를때마다 button의 innerText가 1씩 증가되게 해보세요.
+
+    <button id="countBtn" onclick="increase()">0</button>
+
+    <script>
+        
+        //주의할 점!! 함수도 하나의 데이터형이기 때문에 변수명과 겹치면 안된다.
+        var count=0;
+        function increase(){
+            count=count+1;
+            document.querySelector("#countBtn").innerText=count;
+        }
+
+        
+    </script>
+</body>
+</html>
