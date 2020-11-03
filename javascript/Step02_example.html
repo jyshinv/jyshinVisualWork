@@ -9,58 +9,62 @@
     <h1>산술연산 예제</h1>
     <input type="text" id="num1" placeholder="숫자 입력...">
     <button onclick="plus()">+</button>
-    <input type="text" id="num2" placeholder="숫자 입력...">
-    <span>=</span>
-    <strong id="result1">0</strong>
-    <br>
-    <input type="text" id="num1" placeholder="숫자 입력...">
     <button onclick="minus()">-</button>
-    <input type="text" id="num2" placeholder="숫자 입력...">
-    <span>=</span>
-    <strong id="result2">0</strong>
-    <br>
-    <input type="text" id="num1" placeholder="숫자 입력...">
     <button onclick="mul()">*</button>
-    <input type="text" id="num2" placeholder="숫자 입력...">
-    <span>=</span>
-    <strong id="result3">0</strong>
-    <br>
-    <input type="text" id="num1" placeholder="숫자 입력...">
     <button onclick="div()">/</button>
+
     <input type="text" id="num2" placeholder="숫자 입력...">
     <span>=</span>
-    <strong id="result4">0</strong>
+    <strong id="result">0</strong>
+    
     <br>
     
     <script>
+       
         function plus(){
-            var num1 = document.querySelector("#num1").value; //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
-            var num2 = document.querySelector("#num2").value; //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
-            var result = parseFloat(num1) + parseFloat(num2); //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
+            var num1 = document.querySelector("#num1").value; 
+            //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
+            var num2 = document.querySelector("#num2").value; 
+            //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
+            var result = parseFloat(num1) + parseFloat(num2); 
+            //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
 
-            document.querySelector("#result1").innerText=result; //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
+            document.querySelector("#result").innerText=result; 
+            //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
         }
 
         function minus(){
-            var num1 = document.querySelector("#num1").value; //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
-            var num2 = document.querySelector("#num2").value; //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
-            var result = parseFloat(num1) - parseFloat(num2); //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
+            var num1 = document.querySelector("#num1").value; 
+            //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
+            var num2 = document.querySelector("#num2").value; 
+            //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
+            var result = parseFloat(num1) - parseFloat(num2);
+             //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
 
-            document.querySelector("#result2").innerText=result; //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
+            document.querySelector("#result").innerText=result; 
+            //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
         }
         function mul(){
-            var num1 = document.querySelector("#num1").value; //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
-            var num2 = document.querySelector("#num2").value; //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
-            var result = parseFloat(num1) * parseFloat(num2); //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
+            var num1 = document.querySelector("#num1").value; 
+            //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
+            var num2 = document.querySelector("#num2").value; 
+            //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
+            var result = parseFloat(num1) * parseFloat(num2); 
+            //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
 
-            document.querySelector("#result3").innerText=result; //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
+            document.querySelector("#result").innerText=result; 
+            //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
         }
         function div(){
-            var num1 = document.querySelector("#num1").value; //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
-            var num2 = document.querySelector("#num2").value; //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
-            var result = parseFloat(num1) / parseFloat(num2); //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
+            var num1 = document.querySelector("#num1").value; 
+            //num1이라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num1에 대입합니다.
+            var num2 = document.querySelector("#num2").value; 
+            //num2라는 아이디를 가지고 있는 text박스에 입력한 숫자값을 호출해서 num2에 대입합니다.
+            var result = parseFloat(num1) / parseFloat(num2); 
+            //두 값을 float으로 형변환하여 산술연산자로 계산한 후 result변수에 대입합니다.
 
-            document.querySelector("#result4").innerText=result; //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
+            document.querySelector("#result").innerText=result; 
+            //result라는 아이디를 가지고 있는 텍스트의 innertext를 result로 바꿔서 출력하기.
         }
 
         
