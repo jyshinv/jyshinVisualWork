@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_object2.html</title>
+</head>
+<body>
+    <script>
+
+        //원본 키가 들어있는 mem1
+        var mem1 = {num:1, name:"김구라", addr:"노량진"}
+        
+        //원본키를 mem2에 복사해준다. console에 mem2를 검색한 결과는? {num:1, name:"김구라", addr:"노량진"}
+        var mem2 = mem1;
+
+        //mem1을 바꾸면 mem2도 바뀔까?
+        mem1.name="개구라";//바뀐다.
+
+        //mem2를 바꾸면 mem1 내용도 바뀔까?
+        mem2.num = 2;//바뀐다.
+
+        //같이 바뀐다. 
+        var a = mem1.name; //개구라
+        var b = mem2.name; //개구라 
+        var c = mem1.num; //2
+        var d = mem2.num; //2
+
+
+        //그렇다면? 위의 개념을 익히고 최종 e와 f에는 무엇이 들어있을 지 예상해보자!
+        var num1 = 10;
+        var num2 = num1; //num2에 10을 대입
+
+        num1 = 20; //num1에 20을 대입
+        
+        var e = num1; //e는 num1 인 20
+        var f = num2; //f는 num2 인 10
+
+
+    </script>
+</body>
+</html>

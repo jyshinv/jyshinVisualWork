@@ -6,13 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    //버튼을 누를때마다 button의 innerText가 1씩 증가되게 해보세요.
-
+    
     <button id="countBtn" onclick="increase()">0</button>
-
+    
     <script>
         
-        //주의할 점!! 함수도 하나의 데이터형이기 때문에 변수명과 겹치면 안된다.
+        //quiz 내용 : 버튼을 누를때마다 button의 innerText가 1씩 증가되게 해보세요.
+        //주의할 점!! 함수명과 변수명이 겹치면 안된다.
+        //페이지가 로딩되는 시점에 count 값을 0으로 초기화 한다. 
         var count=0;
         function increase(){
             count=count+1;

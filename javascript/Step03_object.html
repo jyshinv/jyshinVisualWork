@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_object.html</title>
+</head>
+<body>
+    <h1>plain object 테스트 중...</h1>
+    <script>
+        /*
+            plain object type
+            -객체 리터럴 {}을 이용해서 만들 수 있다.
+            -{key:value, key2:value, ...}와 같은 형식으로 만든다.
+            -키 값으로 관리되는 순서가 중요치 않는 데이터를 저장한다.
+        */
+
+        //plain object를 만들면서 바로 값을 저장하기
+        //아래 형태처럼 중괄호를 사용해서 만들면 순수 object
+        var mem1 = {num1:1, name:"김구라", addr:"노량진"}
+
+        //빈 plain object를 만들고 추후에 값을 저장할 수도 있다.
+        var mem2={}
+        mem2.num=2; //이런식으로 값을 동적으로 추가할 수 있다. 
+        mem2.name = "해골"
+        mem2.addr = "행신동"
+
+
+        //연습해보기
+        //mem1의 name 이라는 방에 저장된 값을 a라는 이름의 변수에 담아 보세요.
+        var a = mem1.name; 
+        
+        //mem2 의 addr 이라는 방에 저장된 값을 b라는 이름의 변수에 담아 보세요.
+        var b = mem2.addr;
+
+        //mem1 의 addr 이라는 방에 저장된 값을 "독산동" 으로 수정해 보세요.
+        mem1.addr = "독산동";
+
+        //mem1의 name이라는 방에 저장된 값을 "이정호"로 수정해 보세요.
+        mem1.name = "이정호";
+
+        //mem2의 name이라는 방에 저장된 값을 알림창에 출력해 보세요.
+        alert(mem2.name);
+
+        //a5에서 
+        var a1 = 10;//a1은 number 타입 10을 저장
+        var a2 = true; //a2는 boolean타입 true를 저장
+        var a3 = "hi"; //a3는 string타입 hi를 저장
+        var a4 = 'hello'; //a4는 string타입 hello를 저장
+        var a5 = {num:1, name:"kim1", addr:"nrg"}  
+        //★★★★★★ a5는 obejct type의 키값을 저장한다. (point! value는 실제로 a5에 저장되지 않는다.)
+        //data는 20번지의 사물함에 저장되어 있고 a5엔 20번지의 사물함 키가 저장되어 있다!
+
+
+
+    </script>
+</body>
+</html>
