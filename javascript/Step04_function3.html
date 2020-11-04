@@ -1,0 +1,88 @@
+<!-- https://blog.naver.com/sjy1218v/222135251412 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function3.html</title>
+</head>
+<body>
+    <script>
+        /*
+        
+        1. ECMA5 버전과 ECMA6버전 javascript 비교해보기
+            └ECMA5 버전
+                -변수 선언은 var로 
+                -문자열은 ""와 +로
+
+            └ECMA6 버전
+                -변수 선언은 let로
+                -문자열은 back tick과 ${}로!
+
+        2. object의 참조값을 받는 매개변수를 가진 함수 만들기
+                └함수 : function 함수명(obj){obj.~~};
+
+                └인자전달은?
+                    ex) 함수명 : example, mem1 = {num:1, name:"김구라"}
+                    방법1) example(mem1)
+                    방법2) example({{num:1, name:"김구라"}})
+                    
+        */
+
+        //ECMA5 버전의 javascript
+        function showSum(num1, num2){
+            var sum = num1+num2;
+            var result = num1+ "과 " + num2 + "의 합은 " + sum + "입니다."
+            console.log(result);
+        };
+
+        //ECMA6 버전의 javascript(최신) 
+        function showSum2(num1, num2){
+            //var이 아닌 let으로 변수를 선언한다.
+            let sum = num1+num2;
+            //back tick을 이용해서 문자열 만들기(작은 따옴표 x, 1왼쪽에 있는 기호를 back tick)
+            let result = `${num1} 과 ${num2}의 합은 ${sum} 입니다.`;
+            console.log(result);
+        }
+
+        //콘솔창에서 결과 확인해보기 
+        showSum(10,20);
+        showSum(100, 200);
+
+        showSum2(30,40);
+        showSum2(100,200);
+
+        let mem1={num:1, name:"김구라", addr:"노량진"};
+        let mem2={num:2, name:"해골", addr:"행신동"};
+        
+        //object의 참조값을 받는 매개변수를 가지고 있는 함수 
+        function showInfo(obj){
+            let num=obj.num;
+            let name=obj.name;
+            let addr = obj.addr;
+            let info=`번호는 ${num} 이고 이름은 ${name} 이고 주소는 ${addr} 입니다.`;
+            console.log(info);
+        };
+
+        //위의 코드를 더 간단히 하면?
+        function showInfo2(obj){
+            let info=`번호는 ${obj.num} 이고 이름은 ${obj.name} 이고 주소는 ${obj.addr}`;
+            console.log(info);
+        };
+
+        //object의 참조값을 매개변수로 전달하기
+        showInfo(mem1);
+        showInfo(mem2);
+        showInfo({num:3, name:"원숭이", addr:"상도동"});
+        showInfo({
+            num:4,
+            name:"주뎅이",
+            addr:"봉천동"
+        });
+        showInfo2(mem1);
+
+
+
+    </script>
+</body>
+</html>
