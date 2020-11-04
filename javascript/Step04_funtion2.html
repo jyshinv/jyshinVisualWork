@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_funtion2.html</title>
+</head>
+<body>
+
+    <h1>function 테스트중...</h1>
+    <input type="text" id="inputName" placeholder="이름입력...">
+    <button onclick="enter()">입장하기</button>
+
+<script>
+
+
+        //구라님 환영합니다. → (   )님 환영합니다. 괄호의 내용을 원하는대로 넣고싶다! 
+        function welcome1(){
+            alert("구라님 환영합니다.");
+        };
+
+        //함수의 인자를 전달 받을 매개변수 arg 정의하기
+        function welcome2(arg){
+            //arg에는 함수를 호출하면서 전달한 값이 들어있다
+            alert(arg + " 님 환영합니다.");
+        };
+        
+        //quiz! 이름입력 후 입장하기 누르면 
+        //(      )님 환영합니다! 가 알림창으로 뜨게 하기
+        //hint.welcome2() 함수를 이용해보자!
+        function enter(){
+            //1. id가 inputName인 요소에 입력한 문자열 읽어오기
+            var name = document.querySelector("#inputName").value;
+
+            //2. welcome() 함수 호출하면서 전달하기
+            welcome2(name);
+            
+            //3. id가 inputName인 요소에 입력한 문자열 지우기
+            document.querySelector("#inputName").value = ""; 
+
+            //4.id가 inputName인 요소에 포커스 주기(커서와 함께 텍스트 창이 두꺼워짐)
+            document.querySelector("#inputName").focus();
+        };
+      
+
+    </script>
+</body>
+</html>

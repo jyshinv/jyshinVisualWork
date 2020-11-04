@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Step04_function.html</title>
+    </head>
+    <body>
+        
+        
+        
+    <h1>keepBeer을 호출해보자!</h1>
+    <!--onclick : 클릭하는 순간 함수가 호출된다.-->
+    <button onclick="keepBeer();">맥주보관</button><br>
+    <button onclick="keepBeer2()">맥주보관2</button><br>
+    <button onclick="person.keepBeer3();">맥주보관3</button><br>
+
+    <script>
+        /*
+        function type
+        -특정 시점에 일괄 실행 할 javascript를 모아 놓는 역할을 한다.
+        -함수도 heap영역에 만들어지는 객체이다.
+        -함수를 호출하면서 값을 필요 시 전달할수도 있다.
+        -함수를 호출하면 반드시 어떤 값을 해당 위치로 return 해준다.
+        */
+
+        //맥주를 냉장고에 보관하기
+        //아래 3줄은 언제 실행될까? → 페이지가 로딩하는 시점에!!!!
+        console.log("로딩되는 시점에 냉장고 문을 연다.");
+        console.log("로딩되는 시점에 맥주를 넣는다.");
+        console.log("로딩되는 시점에 냉장고 문을 닫는다.");
+
+
+        //방법1 : 함수 만들어서 실행코드 넣기
+        //언제 실행될까? → 함수가 호출되는 시점에!!!!
+        function keepBeer(){
+            //맥주를 냉장고에 보관하기
+            console.log("keepBeer() 함수가 호출되는 시점에 냉장고 문을 연다.");
+            console.log("keepBeer() 함수가 호출되는 시점에 맥주를 넣는다.");
+            console.log("keepBeer() 함수가 호출되는 시점에 냉장고 문을 닫는다.");
+
+        };
+
+        //방법2 : 익명의 함수를 만들어서 keepbeer2 라는 변수에 참조값 대입하기
+        //언제 실행될까? → 함수가 호출되는 시점에!!!!
+        var keepBeer2 = function(){
+            //맥주를 냉장고에 보관하기
+            console.log("keepBeer2() 함수가 호출되는 시점에 냉장고 문을 연다.");
+            console.log("keepBeer2() 함수가 호출되는 시점에 맥주를 넣는다.");
+            console.log("keepBeer2() 함수가 호출되는 시점에 냉장고 문을 닫는다.");
+        };
+
+
+        //방법3 : object type 특정 방 내에 함수 넣기
+        //언제 실행될까? → 함수가 호출되는 시점에!!!!
+        var person={
+            name:"김구라",
+            keepBeer3 : function(){
+                console.log("keepBeer3() 함수가 호출되는 시점에 냉장고 문을 연다.");
+                console.log("keepBeer3() 함수가 호출되는 시점에 맥주를 넣는다.");
+                console.log("keepBeer3() 함수가 호출되는 시점에 냉장고 문을 닫는다.");
+            } //주의!! object type 내에 함수를 넣을 땐 ;을 쓰면 에러남!!
+        };
+
+        
+        
+    </script>
+
+
+
+</body>
+</html>
