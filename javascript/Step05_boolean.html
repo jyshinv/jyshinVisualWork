@@ -1,0 +1,39 @@
+<!--
+    -예약어 종류
+    var, let, function, return if 
+    └이러한 예약어는 변수명으로 사용할 수 없다. 
+
+    -if문 
+    if(){
+        ...
+    }
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>boolean type 테스트</h1>
+    <p id="info"></p>
+    
+    <script>
+        let isFirst = confirm("첫 방문이면 확인을 누르세요");
+
+        //if문! isFirst가 true이면 코드를 실행해라
+        // if(isFirst == true){
+        //     document.querySelector("#info").innerText = "첫 방문을 환영합니다!";
+
+        // }
+
+        //위의 코드를 아래와 같이 쓸 수 있다.    
+        if(isFirst){
+            document.querySelector("#info").innerText = "첫 방문을 환영합니다!";
+
+        }
+    </script>
+</body>
+</html>

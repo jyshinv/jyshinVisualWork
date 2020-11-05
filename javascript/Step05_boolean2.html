@@ -1,0 +1,36 @@
+<!--
+    -양자 택일의 if~else문
+    if(){
+        ...
+    }else{
+        ...
+    }
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_boolean2.html</title>
+</head>
+<body>
+    <h1>boolean type 테스트중...</h1>
+    <p id="info"></p>
+    <script>
+        // 꿀팁) 변수의 type이 boolean이라면 변수명을 "is변수명"으로 해주자!
+        let isMan = confirm("남자이면 확인을 누르세요.");
+
+        if(isMan){
+            printgender("남자");
+        }else{
+            printgender("여자");
+        }
+
+        function printgender(gender){
+            document.querySelector("#info").innerText = "당신은 " + gender + "이군요!";
+        }
+
+        
+    </script>
+</body>
+</html>
