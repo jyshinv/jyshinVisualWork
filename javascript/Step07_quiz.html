@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_quiz.html</title>
+
+    <style>
+            .box{ /*class명이 box인 요소의 스타일을 변경해라*/
+                width: 100px;
+                height: 100px;
+                background-color: rgb(245, 255, 217);
+                border : 1px solid red; 
+                float:left
+            }
+
+    </style>
+</head>
+<body>
+    <h1>EventListener 퀴즈</h1>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        //클릭한 곳에 clicked!가 뜨도록 만드시오!
+        /*
+            [hint]
+            1. for
+            2. document.querySelectorAll("div")[i].addEventListener();
+            3. this.innerText 
+        */
+
+        (function(){
+            //for로 구현해보기
+            let divs = document.querySelectorAll("div");
+            for(let i=0; i<divs.length; i++){
+                divs[i].addEventListener("click",function(){
+                    this.innerText = "clicked";
+                });
+            };
+        });
+
+
+        //for each로 구현해보기
+        let div_arr = document.querySelectorAll("div");
+        div_arr.forEach(function(item){
+            item.addEventListener("click",function(){
+                this.innerText = "clicked";
+            });
+        });
+       
+        
+        
+    </script>
+    
+</body>
+</html>

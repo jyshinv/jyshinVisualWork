@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener2.html</title>
+    <style>
+        .box{ /*class명이 box인 요소의 스타일을 변경해라*/
+            width: 100px;
+            height: 100px;
+            background-color: rgb(165, 243, 248);
+            border : 1px solid red; 
+            /*
+            border
+            테두리를 1px로 하고 
+            선은 solid 스타일로!(dashed, dotted, solid..등이 있음)
+            색은 red! 
+            */
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener 사용해보기</h1>
+    <button id="myBtn">눌러보셈2</button>
+    <div id="myDiv" class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      
+        /*
+        call함수의 정확한 정의
+
+        javascript에서는 callback 함수는 다른 함수의 매개변수로 함수를 전달하고, 
+        어떠한 이벤트가 발생한 후 매개변수로 전달한 함수가 다시 호출되는 것을 의미합니다.
+        callback은 쉽게 말하자면 어떤 일을 다른 객체에게 시키고, 
+        그 일이 끝나는 것은 기다리지 않고 끝나고 부를 때까지 다른 일을 하는 것을 말합니다.
+        그렇기 때문에 non-block이며, 비동기 방식의 함수를 사용합니다.
+        */
+
+        //.addEventListener("event name", function(){});
+        //.addEventListener(string type "event name", function type call back function)
+        //이때 event name은 이미 정해져 있음! 사용자 지정이 아님!
+        //event name과 같은 이름의 event가 일어났을 때 funtion이 실행된다. 
+        //이때의 함수를 callback함수라고 한다.
+
+        //myBtn이라는 id를 가진 요소에 click이라는 event가 일어나면 function을 실행해주세요!
+        document.querySelector("#myBtn").addEventListener("click",function(){
+            alert("버튼을 눌렀네요?");
+        });
+
+        //myDiv라는 id를 가진 요소를 클릭하면 요소의 innerText에 clicked!가 들어가게 해라!
+        document.querySelector("#myDiv").addEventListener("click",function(){
+            //document.querySelector("#myDiv").innerText = "clicked!";
+            this.innerText = "clicked!"; 
+            //this는 자기자신을 가르킨다. 즉 this = document.querySlector("#myDiv"); 
+            //this는 참조값을 가지고 있음!
+        });
+
+
+        //EventListener 작성 요령
+        /*
+        step1) 
+        document.querySelector("#myDiv").addEventListener("(1)",function(){(2)}); 
+        까지 쓰기
+        
+        step2) 
+        document.querySelector("#myDiv").addEventListener("event_name",function(){}); 
+        └(1)자리에 event name 쓰기
+        
+        step3) 
+        document.querySelector("#myDiv").addEventListener("event_name",function(){    
+
+        }); 
+        └(2)자리에서 enter! 누르고 함수 작성! 끗~!
+        
+        */
+    </script>
+</body>
+</html>

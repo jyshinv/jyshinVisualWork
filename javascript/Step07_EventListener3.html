@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener3.html</title>
+</head>
+<body>
+
+    <h1>key event 처리</h1>
+    <input type="text" id="inputMsg" placeholder="메세지 입력..."/>
+    <p id="result"></p>
+    <script>
+
+        //event : keydown
+        document.querySelector("#inputMsg")
+            .addEventListener("keydown",function(event){
+                //여기서 event는 keydown이라는 event에 대한 object 정보를 알려준다.
+                console.log(event);
+                //1. 만일 enter키를 눌렀다면
+                if(event.key == "Enter"){//event.key 나 event.keyCode 둘 중 하나로 비교해도 된다. 
+                    //2.input요소에 입력한 value를 일겅와서
+                    let msg = document.querySelector("#inputMsg").value;
+                    //3. p요소의 innerText로 출력하기 
+                    document.querySelector("#result").innerText = msg;
+
+                }
+            });
+    </script>
+    
+</body>
+</html>
