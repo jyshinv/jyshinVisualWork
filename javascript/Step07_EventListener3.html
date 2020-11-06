@@ -10,22 +10,36 @@
     <h1>key event 처리</h1>
     <input type="text" id="inputMsg" placeholder="메세지 입력..."/>
     <p id="result"></p>
+    <ul id="msgList"></ul>
+
     <script>
 
-        //event : keydown
+        //event : keydown(포커즈를 주며 클릭했을 때)
         document.querySelector("#inputMsg")
             .addEventListener("keydown",function(event){
                 //여기서 event는 keydown이라는 event에 대한 object 정보를 알려준다.
                 console.log(event);
                 //1. 만일 enter키를 눌렀다면
                 if(event.key == "Enter"){//event.key 나 event.keyCode 둘 중 하나로 비교해도 된다. 
-                    //2.input요소에 입력한 value를 일겅와서
+
+                    //2.input요소에 입력한 value를 읽어와서 
                     let msg = document.querySelector("#inputMsg").value;
+                    
                     //3. p요소의 innerText로 출력하기 
                     document.querySelector("#result").innerText = msg;
 
+                    //4. ul의 li요소에 추가하기 
+                    let li = document.createElement("li"); //li를 생성해라
+                    li.innerText = msg; //msg를 innerText에 넣어라
+                    document.querySelector("#msgList").append(li);//ul의 자식요소로 넣어라 
+                    
+                    //5. 텍스트창 비워주기(해주고 안해주고 차이 알아두기!!) 
+                    document.querySelector("#inputMsg").value = "";
+
                 }
             });
+
+        
     </script>
     
 </body>

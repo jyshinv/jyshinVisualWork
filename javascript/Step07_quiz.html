@@ -47,24 +47,31 @@
             3. this.innerText 
         */
 
-        (function(){
-            //for로 구현해보기
-            let divs = document.querySelectorAll("div");
-            for(let i=0; i<divs.length; i++){
-                divs[i].addEventListener("click",function(){
-                    this.innerText = "clicked";
-                });
-            };
-        });
+        // (function(){
+        //     //for로 구현해보기
+        //     let divs = document.querySelectorAll("div");
+        //     for(let i=0; i<divs.length; i++){
+        //         divs[i].addEventListener("click",function(){
+        //             this.innerText = "clicked";
+        //         });
+        //     };
+        // })();
 
-
-        //for each로 구현해보기
-        let div_arr = document.querySelectorAll("div");
-        div_arr.forEach(function(item){
-            item.addEventListener("click",function(){
+        //for로 구현해보기
+        let divs = document.querySelectorAll("div");
+        for(let i=0; i<divs.length; i++){
+            divs[i].addEventListener("click",function(){
                 this.innerText = "clicked";
             });
-        });
+        };
+
+        //for each로 구현해보기
+        // let div_arr = document.querySelectorAll("div");
+        // div_arr.forEach(function(item){
+        //     item.addEventListener("click",function(){
+        //         this.innerText = "clicked";
+        //     });
+        // });
        
         
         

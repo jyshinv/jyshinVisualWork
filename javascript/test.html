@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener.html</title>
+</head>
+<body>
+    <h1>EventListener 테스트</h1>
+    <!--아래의 패턴은 프로젝트가 커질수록 사용하기가 어려워진다. -->
+    <!-- 
+    <button onclick="clicked()"></button>
+    <button id="myBtn">눌러보셈2</button>
+
+    <script>
+        function clicked(){
+            alert("버튼을 눌렀네요?");
+        }
+    </script>
+    -->
+
+    <script>
+
+        /*
+        global
+        -script내의 가장 바깥라인 영역은 global 영역 (global=전역)
+        -global에 만들어지는 변수를 global 변수라고 한다. 
+        -페이지가 로딩되는 시점에 만들어진 것들은 global 영역!
+        -global 영역에는 웬만하면 변수를 만들면 안된다. 
+
+        local
+        -함수 내의 지역은 local
+        -local에 만들어지는 변수를 local변수라고 한다.
+
+        *주의*
+        step1)아래 1번,2번,3번은 모두 global영역에 만들어짐!
+        이렇게 되면 브라우저-검사 모드에서 누구든 조작하는 일이 발생!
+        console창에서 myName을 다른값으로 바꿀 수 있다.
+        따라서 global영역에는 함수든, 변수든 global영역에는 만들지 말자
+        그럼 어디에 만들지?? 
+        
+        step2)이때 callback함수를 이용하는 eventListener 함수를 만들어 그 안에 만들자!
+        
+        step3)그 후 addeventListner을 만들다가 어쩔 수 없이 global 변수를 만들었다면?
+        둘을 2번 함수 내에다 넣어버리자! 
+        2번 처럼 생긴함수는 지역변수라 외부에서 접근할 수도 없고, 페이지가 로딩되자마자 
+        누가 호출하지 않아도 호출된다. 
+        
+        이렇게 하면 모두 함수안에 들어있기 때문에 F12를 통해 조작할 수도, 참조할 수도 없다.
+        */
+
+        //1번
+        //만들어지는 시점 : 페이지가 로딩되는 시점(global)
+        let myName = "김구라";
+
+        //2번★★★★★
+        //실행되는 시점 :
+        //페이지가 로딩되는 시점에 
+        //한번 자동으로 호출되서 다시 호출될일 없는 1회용
+        //(함수명이 없어 재사용이 불가하다)
+        //만들어지는 시점 : 페이지가 로딩되는 시점(global)
+        (function(){    
+            let yourName="해골";
+        })();
+
+        //3번
+        //실행되는 시점 : 
+        //만들어지는 시점 : 페이지가 로딩되는 시점(global)
+        function text(){
+            let ourName="원숭이";
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
+
+
+
+출처: https://sjy1218vv.tistory.com/25 [컴퓨터는 잘못이 없따..]

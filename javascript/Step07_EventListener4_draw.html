@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener4_draw.html</title>
+
+    <style>
+        canvas{
+            border: 1px dashed rgb(100,100,100);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>그림판</h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        //canvas 요소의 참조값 얻어오기
+        let canvas = document.querySelector("#myCanvas");
+        //canvas에 렌더링 할 수 있는 도구(context) 의 참조값 얻어오기
+        let context = canvas.getContext("2d");
+        //그림 그릴 때 필요한 참조  
+        context.lineWidth=10;//선의 굵기 
+        context.lineCap = "round";//선의 시작과 끝을 둥글게
+        context.lineJoin = "round"; //선의 교차점을 둥글게 
+        context.strokeStyle="green"; //색의 선 지정 
+        context.beginPath(); //경로 시작
+        context.moveTo(100,100); //시작점 지점
+        context.lineTo(200,200); //이을점 지점
+        context.lineTo(200,100); //이을점 지점
+        context.stroke(); //그리기
+        context.closePath();//경로 끝
+
+        //canvas에 이벤트 처리
+        canvas.addEventListener("mousemove",function(event){
+            //이벤트가 일어난 곳의 좌표
+            let x = event.offsetX;
+            let y = event.offsetY;
+            context.movtTo(x,y);
+            context.stroke();
+        });
+    </script>
+    
+</body>
+</html>
