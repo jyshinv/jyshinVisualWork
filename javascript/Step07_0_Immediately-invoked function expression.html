@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener.html</title>
+</head>
+<body>
+    <h1>즉시실행함수 테스트</h1>
+    <!--아래의 패턴은 프로젝트가 커질수록 사용하기가 어려워진다. -->
+    <!-- 
+    <button onclick="clicked()"></button>
+    <button id="myBtn">눌러보셈2</button>
+
+    <script>
+        function clicked(){
+            alert("버튼을 눌렀네요?");
+        }
+    </script>
+    -->
+
+    <script>
+
+        /*
+        global
+        -script내의 가장 바깥라인 영역은 global 영역 (global=전역)
+        -global에 만들어지는 변수를 global 변수라고 한다. 
+        -페이지가 로딩되는 시점에 만들어진 것들은 global 영역!
+        -global 영역에는 웬만하면 변수를 만들면 안된다.
+        (이유 F12의 브라우저 검사모드에서 값 참조와 조작 가능)
+
+        local
+        -함수 내의 공간을 지역 = local이라고 한다. 
+        -local에 만들어지는 변수를 local변수라고 한다.
+
+        즉시실행함수 사용이유?
+        -첫 로드 시 초기화 할 때 변수를 global하게 선언하고 싶지 않을 때
+        (global하게 선언 시 브라우저-검사 기능에서 값 참조와 조작이 가능할 수 있음!)
+        -변수에 함수를 이용해 즉시 값을 할당하고 싶을 때
+        -라이브러리 전역 변수 충돌 방지
+
+        */
+
+
+        //코드1
+        let myName ="원숭이";
+        var test = function(){
+            console.log(myName + "함수 호출");
+        };
+        test();
+
+        //코드2
+        (function(){    
+            let yourName="해골";
+            console.log(yourName + "함수 호출");
+        })();
+
+        /*
+        코드1과 코드2는 동일하게 작동한다.
+        하지만 코드1의 myName은 참조와, 조작이 가능한 반면
+        코드2의 yourName은 참조와 조작이 가능하지 않다.
+
+        이때 코드2를 '즉시실행함수'라고 한다.
+        페이지가 로딩되는 시점에 
+        누군가 호출하지 않아도 한번 자동으로 호출되서 
+        다시 호출될일 없는 1회용 함수이다.
+        (함수명이 없어 재사용이 불가하다)
+        */
+        
+
+
+    
+
+
+
+    </script>
+
+    
+</body>
+</html>
