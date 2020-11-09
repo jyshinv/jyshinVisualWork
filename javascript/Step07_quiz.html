@@ -42,11 +42,12 @@
         //클릭한 곳에 clicked!가 뜨도록 만드시오!
         /*
             [hint]
-            1. for
-            2. document.querySelectorAll("div")[i].addEventListener();
+            1. for과 foreach 둘다 구현해보기!
+            2. document.querySelectorAll("div")[i].addEventListener(); 사용하기!
             3. this.innerText 
         */
 
+        //정답1
         // (function(){
         //     //for로 구현해보기
         //     let divs = document.querySelectorAll("div");
@@ -57,14 +58,17 @@
         //     };
         // })();
 
-        //for로 구현해보기
-        let divs = document.querySelectorAll("div");
-        for(let i=0; i<divs.length; i++){
-            divs[i].addEventListener("click",function(){
-                this.innerText = "clicked";
-            });
-        };
 
+        //정답2
+        //for로 구현해보기
+        // let divs = document.querySelectorAll("div");
+        // for(let i=0; i<divs.length; i++){
+        //     divs[i].addEventListener("click",function(){
+        //         this.innerText = "clicked";
+        //     });
+        // };
+
+        //정답3
         //for each로 구현해보기
         // let div_arr = document.querySelectorAll("div");
         // div_arr.forEach(function(item){
@@ -72,6 +76,17 @@
         //         this.innerText = "clicked";
         //     });
         // });
+
+
+        //정답4
+        (function(){
+            let div_arr = document.querySelectorAll("div");
+            div_arr.forEach(function(item){
+                item.addEventListener("click",function(){
+                    this.innerText = "clicked";
+                });
+            });
+        })();
        
         
         

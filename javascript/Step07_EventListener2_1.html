@@ -20,11 +20,12 @@
         <div class="wrapper" id="myDiv"></div>
 
         <script>
-            //event : mousemove
-            //eventListener 의 callback 함수의 매개변수로 event에 대한 정보가 object 형태로 들어간다.
-            //mousemove이벤트에 대한 객체정보가 evnet 
-            //에 MouseEvent {isTrusted: true, screenX: 282, screenY: 512, clientX: 282, clientY: 409, …} 이런 형태로 들어간다. 
-            //모든 event는 object정보를 가지고 있다.
+            /*event : mousemove
+            eventListener 의 callback 함수의 매개변수로 
+            event에 대한 정보가 object 형태로 들어간다.
+            mousemove이벤트에 대한 객체정보가 evnet 
+            에 {isTrusted: true, screenX: 282, screenY: 512, clientX: 282, clientY: 409, …} 이런 형태로 들어간다. 
+            모든 event는 object정보를 가지고 있다.*/
             document.querySelector("#myDiv").addEventListener("mousemove",function(event){
                 console.log("mousemove!");
                 //event는 발생한 이벤트에 대한 정보를 담고있는 objec이다. 
@@ -34,6 +35,7 @@
                 let info = `x좌표 : ${event.offsetX} y좌표: ${event.offsetY}`;
                 //이벤트가 발생한 div의 innerText로 출력하기
                 this.innerText=info;
+                event
             });
         </script>
     
