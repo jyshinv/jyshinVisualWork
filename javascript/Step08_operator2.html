@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_operator2.html</title>
+</head>
+<body>
+    <h1>논리(boolean) 연산자 테스트 중</h1>
+
+    <script>
+        /*
+
+        논리연산을 왜 쓸까?
+
+        아래와 같은 예시를 보자.
+
+        [아침에 눈을 떴다. 기상할 것인가?]
+
+            1. 일어날 시간인지? 
+            2. 화장실이 급하다? 
+        
+            기상여부 --> 두가지 중 한가지가 true이면 일어나야 한다면?
+            일어날 시간이 true이고 화장실이 급하면(true) 일어나야함
+            일어날 시간이 false이고 화장실이 급하면(true) 일어나야함
+            일어날 시간이 true이고 화장실이 급하지 않으면(false) 일어나야함
+            일어날 시간이 false이고 화장실이 급하지 않으면(false) 안일어나도 된다.
+
+        [ 점심을 먹어야 한다. ]
+
+            1. 점심 시간인지? 
+            2. 배가 고픈지? 
+
+            기상여부 --> 둘다 true여야 먹는다. 
+        
+
+        [&&연산자]
+        a && b -> a와 b둘다 true여야 true임!, 나머지는 전부 false
+
+        [||연산자]
+        a || b -> a와 b둘 중 하나라도 true이면 true임!
+
+        [!연산자]
+        !a => a가 true라면 true를 a가 false라면 false로 반전시켜줌
+
+        
+        [if문과 논리연산자 사용 해석방법]
+        && => and 연산 ("그리고" 로 읽는다)
+        || => or 연산  ("또는" 으로 읽는다)
+        !  => not 연산 ("아니면" 으로 읽는다)
+
+        ex1)
+        let isRun; //달릴건지의 여부
+        let isWait; //기다릴건지의 여부
+
+        if(isRun){} :만약 기다릴거라면
+        if(!isRun){} : 만약 기다리지 않을 거라면
+        if(isWait){} : 만일 기다릴거라면
+        if(!isWait){} : 만일 기다리지 않을 거라면
+        if(isRun||isWait) : 만일 달리거나, 기다린다면(or)
+        if(isRun&&isWait) : 만일 달릴거고 기다리기도 한다면(and)
+
+
+        ex2)
+        let x = ?
+
+        0< x <10 : if(x>0 && x<10)
+        x<0 이거나 x>10 : if(x<0 || x>10)
+
+
+        */
+
+        var result1=false&&false; //false
+        var result2=false&&true; //false
+        var result3=true&&false; //false
+        var result4=true&&true; //true
+
+        //연산에 참여하는 boolean 값이 어느 하나만 true  면 결과는 true 이다.
+        var result5=false||false; //false
+        var result6=false||true; //true
+        var result7=true||false; //true
+        var result8=true||true; //true
+
+        //boolean 값을 반전시킨다. 
+        var result9=!true;  //false
+        var result10=!false; //true
+
+ 
+
+
+    </script>
+
+</body>
+</html>

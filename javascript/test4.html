@@ -3,158 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step07_DrawPanel.html</title>
-    <!--css영역-->
-    <style>
-        canvas{
-            border: 1px dashed gray;
-            cursor: crosshair;
-        }
-    </style>
+    <title>Step07_EventListener.html</title>
 </head>
 <body>
-    <!--html영역-->
-    <h1>그림판</h1>
-    <canvas id="myCanvas" width="500" height="500"></canvas>
-    <br/>
-    <input type="color" id="inputColor"/>
-    <select id="lineWidth">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option>4</option>
-        <option selected>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <!--option selected 는 defalut로 선택되는 option-->
-        <!--selected는 checkbox, radio의 checked 같은 역할!-->
-        <!--value를 정해주지 않으면 innerText가 value가 된다!-->
-    </select>
-    <button id="fillBackBtn">배경색</button>
-    <label>
-        지우개 기능
-        <input type="checkbox" id="eraseCheck"/>
-    </label>
-    <!--js 영역 시작-->
+    <h1>EventListener 테스트</h1>
+    <!--아래의 패턴은 프로젝트가 커질수록 사용하기가 어려워진다. -->
+    <!-- 
+    <button onclick="clicked()"></button>
+    <button id="myBtn">눌러보셈2</button>
+
     <script>
-        //canvas  요소의 참조값 얻어오기 
-        let canvas=document.querySelector("#myCanvas");
-        //canvas 에 렌더링 할수 있는 도구(context) 의 참조값 얻어오기 
-        let context=canvas.getContext("2d");
-        //페이지 로딩 시점에 선의 굵기 초기값 지정하기 
-        let currentWidth=5;
-        //선의 시작과 끝을 둥글게
-        context.lineCap="round";
-        //선의 교차점을 둥글게
-        context.lineJoin="round";
-        //선의 색상을 저장할 변수 만들고 "black" 으로 초기화 
-        let color="black";
-        //선의 색상 지정하기 
-        context.strokeStyle=color;
-        //마우스가 down 상태 인지 여부
-        let isMouseDown=false;
-        
-        //그림을 그리는 상태인지 지우는 상태인지 여부 
-        // false => 그림을 그리는 상태, true => 지우는 상태  
-        let isErase=false; 
-
-
-        //아래 6줄은 페이지가 로딩되는 시점에 그림판에 그림이 그려져있음 
-        // context.beginPath();
-        // context.moveTo(100, 100);
-        // context.lineTo(200, 200);
-        // context.lineTo(200, 100);
-        // context.stroke();
-        // context.closePath();
-
-
-        //그림 그리는 상태 
-        canvas.addEventListener("mousedown", function(event){
-            //마우스 down 상태로 바꿔준다.
-            isMouseDown=true;
-            //이벤트가 일어난곳의 좌표
-            let x=event.offsetX;
-            let y=event.offsetY;
-            //mousedown 이벤트가 일어난 지점에서 부터 그릴 준비를 한다. 
-            context.beginPath();
-            context.moveTo(x, y);
-            //변수에 저장된 값으로 색상 지정
-            context.strokeStyle=color;
-            //변수에 저장된 값으로 선의 굵기 지정
-            context.lineWidth=currentWidth;
-        });
-
-        //그림 그리는 상태 or 그림 지우는 상태 
-        //canvas 에 mousemove 이벤트 처리 
-        canvas.addEventListener("mousemove", function(event){
-            //만일 마우스 down 상태 일때
-            if(isMouseDown == true){
-                //이벤트가 일어난곳의 좌표
-                let x=event.offsetX;
-                let y=event.offsetY;
-                if(isErase){ //만일 지우는 작업 상태이면 
-                    //현재 커서 위치에 10*10 사이즈의 흰색 블록이 생김
-                    context.clearRect(x, y, 10, 10);
-                }else{//지우는 작업 상태가 아니라면 (그리는 상태라면)
-                    context.lineTo(x, y);
-                    context.stroke();
-                }
-            }
-        });
-
-        //global변수 중 boolean type true, false 설정해주는 코드 
-        canvas.addEventListener("mouseup", function(){
-            //더이상 작업(그림 or 지우기) 않도록 상태값을 바꿔준다. 
-            isMouseDown=false;
-        });
-
-        //global변수 중 boolean type true, false 설정해주는 코드 
-        //체크박스의 체크 상태가 바뀌었을때 호출되는 함수 등록
-        document.querySelector("#eraseCheck")
-            .addEventListener("change", function(){
-                //체크여부를 (true or false) 변수에 담는다.
-                //★★★ 다른 input요소와는 다르게 checked 여부를 
-                //불러올 수 있음!!
-                isErase=this.checked;
-                //지우는 상태 여부에 따라 커서의 모양을 바꿔준다.
-                if(isErase){
-                    document.querySelector("#myCanvas")
-                        .style.cursor="not-allowed";
-                }else{
-                    document.querySelector("#myCanvas")
-                        .style.cursor="crosshair";
-                }
-            });        
-
-        //선의 색상 변경 
-        document.querySelector("#inputColor")
-            .addEventListener("change", function(){
-                // color 변수에 현재 value 값을 대입한다. 
-                color=this.value;
-            });
-        
-        //선의 굵기 설정
-        // select 요소에 change 이벤트가 발생했을때 실행할 함수 등록
-        document.querySelector("#lineWidth")
-            .addEventListener("change", function(){
-                //change 이벤트가 일어난 요소의 value 값을 변수에 대입
-                currentWidth=this.value;
-            });
-
-        //선의 배경색 설정
-        //배경색상 버튼을 눌렀을때 실행할 함수 등록 
-        document.querySelector("#fillBackBtn")
-            .addEventListener("click", function(){
-                //현재 선택된 색상을 체울 색으로 지정하고 
-                context.fillStyle=color;
-                // fillRect(x, y, width, height) 로 지정된 사각형 영역을 체운다.
-                context.fillRect(0, 0, 500, 500);
-            });
-
-
+        function clicked(){
+            alert("버튼을 눌렀네요?");
+        }
     </script>
+    -->
+
+    <script>
+
+        /*
+        global
+        -script내의 가장 바깥라인 영역은 global 영역 (global=전역)
+        -global에 만들어지는 변수를 global 변수라고 한다. 
+        -페이지가 로딩되는 시점에 만들어진 것들은 global 영역!
+        -global 영역에는 웬만하면 변수를 만들면 안된다.
+        (이유 F12의 브라우저 검사모드에서 값 참조와 조작 가능)
+
+        local
+        -함수 내의 공간을 지역 = local이라고 한다. 
+        -local에 만들어지는 변수를 local변수라고 한다.
+
+        즉시실행함수 사용이유?
+        -첫 로드 시 초기화 할 때 변수를 global하게 선언하고 싶지 않을 때
+        (global하게 선언 시 브라우저-검사 기능에서 값 참조와 조작이 가능할 수 있음!)
+        -변수에 함수를 이용해 즉시 값을 할당하고 싶을 때
+        -라이브러리 전역 변수 충돌 방지
+
+        */
+
+
+        //코드1
+        let myName ="원숭이";
+        var test = function(){
+            console.log(myName + "함수 호출");
+        };
+        test();
+
+        //코드2
+        (function(){    
+            let yourName="해골";
+            console.log(yourName + "함수 호출");
+        })();
+
+        /*
+        코드1과 코드2는 동일하게 작동한다.
+        하지만 코드1의 myName은 참조와, 조작이 가능한 반면
+        코드2의 yourName은 참조와 조작이 가능하지 않다.
+
+        이때 코드2를 '즉시실행함수'라고 한다.
+        페이지가 로딩되는 시점에 
+        누군가 호출하지 않아도 한번 자동으로 호출되서 
+        다시 호출될일 없는 1회용 함수이다.
+        (함수명이 없어 재사용이 불가하다)
+        */
+        
+    </script>
+
+    
 </body>
 </html>

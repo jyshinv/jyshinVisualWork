@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼입니다.</button>
+
+    <script>
+        //global(페이지 로딩 시점에 읽어온다.)
+        let b1=10;
+        let b2=20;
+        let b3=30;
+        let b4=40;
+
+        //코드1
+        function test1(){
+            let a1=1;
+            console.log("test1입니다.")
+        };
+
+        //코드2
+        let test2 = function(){
+            let a2=2;
+            console.log("test2입니다.")
+        };
+
+        //코드3
+        (function(){    
+            let a3="해골";
+            console.log("즉시실행함수 입니다.");
+        })();
+
+        //코드4
+        document.querySelector("#btn").addEventListener("click",function(){
+            let a4=4;
+            console.log("코드 4의 addEventListener입니다.");
+        });
+
+        //코드5
+        (function(){ 
+            document.querySelector("#btn").addEventListener("click",function(){
+                let a5=5;
+                console.log("코드 5의 addEventListener입니다.");
+            });            
+        })();
+
+    </script>
+</body>
+</html>

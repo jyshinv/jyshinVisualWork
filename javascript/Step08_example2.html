@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputId" placeholder="아이디입력...">
+    <input type="password" id="inputPwd" placeholder="비밀번호입력...">
+    <button id="authBtn">인증하기</button>
+    <p id="result">인증하기</p>
+
+    <script>
+        /*
+        
+
+        */
+        document.querySelector("#authBtn").addEventListener("click",function(){
+
+            let id = document.querySelector("#inputId").value;
+            let pwd = document.querySelector("#inputPwd").value;
+            let result = document.querySelector("#result");
+            if(id=="gura" && pwd=="1234"){
+                result.innerText = "인증되었습니다.";
+            }else{
+                result.innerText= "아이디 혹은 비밀번호가 틀려요";
+            }
+
+        });
+    </script>
+</body>
+</html>
