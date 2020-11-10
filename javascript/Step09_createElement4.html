@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_createElement4.html</title>
+</head>
+<body>
+    <h1>다양한 구조의 요소 만들기</h1>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody id="one">
+            
+        </tbody>
+    </table>
+    <script>
+        let obj = {name:"김구라",addr:"노량진"};
+
+        let tr1 = document.createElement("tr");
+        
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+
+        td1.innerText = obj.name;
+        td2.innerText = obj.addr;
+
+        tr1.append(td1);
+        tr1.append(td2);
+        //위 2 코드는 이렇게 써도 된다!
+        //tr1.append(td1,td2);
+
+        
+        document.querySelector("#one").append(tr1);
+
+        
+
+    </script>
+</body>
+</html>

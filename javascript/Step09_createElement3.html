@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_createElement3.html</title>
+</head>
+<body>
+
+    <h1>반복문 돌면서 요소만들기</h1>
+    <button id="showBtn">출력하기</button>
+    <h1>친구 목록 입니다.</h1>
+    <ul id="one">
+
+    </ul>
+
+    <script>
+        /*
+        출력하기 버튼을 누르면
+        아래의 friends 배열에 있는 내용을 순서대로 
+        ul요소에 추가해 보세요.
+        단, li요소를 만들어서 innerText에 출력하세요.
+        */
+        let friends = ['김구라','해골','원숭이','주뎅이','덩어리'];
+
+        //출력하기 버튼을 클릭했을 때 ul요소의 자식요소로 li가 추가된다. 
+        document.querySelector("#showBtn").addEventListener("click",function(){
+            for(let i=0; i<friends.length; i++){
+                //1. li요소를 만들어 참조 값을 li변수에 넣는다 .
+                let li1 = document.createElement("li"); //<li></li>
+
+                //2. 만든 요소의 innerText에 배열 요소를 넣는다.
+                li1.innerText = friends[i]; // <li>김구라</li>
+
+                //3.id가 one인 요소의 자식요소로 앞서 만든 li요소를 추가한다. 
+                document.querySelector("#one").append(li1); //<li>김구라</li>를 부모요소에 끼워넣는다. 
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
