@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!--인라인 css는 내부 css를 무조건 이긴다.-->
+
+    <!--css영역1-->
+    <!--외부(external) style sheet 불러오기-->
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <style>
+        /*css 영역2*/
+        /*여기는 internal(내부) css영역*/
+        /*head 내 style 태그 안에 만든다.*/
+        /*css에 맞는 문법에 맞게 작성해야 한다.*/
+        div{
+            /*작성규칙 : css attribute name : value; */
+            margin-top :100px;
+            color : rgb(134, 62, 62);
+
+        }
+
+    
+    </style>
+
+
+</head>
+<body>
+    
+    <!--css영역3-->
+    <!--여기는 inline css 영역-->
+    <!--internal(내부) css영역과 문법규칙이 동일하다.-->
+    <!--원하는 div를 골라서 css를 지정해줄 수 있다.-->
+    <div style="background-color: yellow;">css를 배워보아요</div>
+    <!--background-color은 padding과 border까지만 색이 칠해지고 margin에는
+        칠해지지 않는다.-->
+        
+    <div>css를 배워보아요</div>
+    <p>p1입니다.</p>
+
+    <script>
+        //css영역4
+        //여기서 document.querySelector("#요소의id").style.속성명 = "속성값";
+        //윗줄과 같이 자바스크립트로 동적으로 css의 속성값을 바꿔줄 수 있다. 
+        //인라인 영역이다.
+        /*
+        인라인 영역의 css도 동적으로 속성값을 바꿔줄 수 있다.
+        예시1)
+        <div style="color:red">
+        문서의 참조값.style.color = "red";
+        
+        예시2) 
+        <div style="margin-left:100px">
+        문서의 참조값.style.marginLeft = "100px"
+        여러 단어와 -로 이루어진 속성명은 
+        자바스크립트에서 산술연산자로 이루어져있기 때문에
+        대문자로 표시해준다.
+
+        예시3)
+        <div style="border-top-color:yellow;">
+        문서의 참조값.style.borderTopColor = "yellow";
+        */
+    </script>
+
+</body>
+</html>
+

@@ -3,57 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step04_function4</title>
+    <title>Document</title>
 </head>
 <body>
-
     <script>
-
-        //return이 없는 경우 undefined를 리턴해준다.
-        function a(){
-            console.log("a() 함수 호출됨");
-        }
-
-        //return 10은 number type 10을 리턴해준다.
-        function b(){
-            console.log("b() 함수 호출됨");
-            return 10;
-        }
-
-        //return "kim"은 string type "kim"을 리턴해준다.
-        function c(){
-            console.log("C() 함수 호출됨");
-            return "kim";
-        }
-
-        //return mem1은 object type mem1을 리턴해준다.
-        function d(){
-            console.log("d()함수 호출됨");
-            let mem1 = {num :1, name: "김구라", addr:"노량진"};
-            return mem1;
-        }
-
-
-        //array type을 리턴해주는 함수
-        function e(){
-            console.log("e함수 호출됨");
-            let arr = ["김구라","해골","원숭이"];
-            return arr;
-        }
-
-        //object를 담고있는 array type인 data를 return해준다.
-        function getData(){
-            let data=[
-                {num : 1, name : "김구라", isMan : true},
-                {num : 2, name : "해골", isMan : false},
-                {num : 3, name : "원숭이", isMan : true}
-            ];
-            return data;
-            
-        }
-        
-        
+        let a = alert("안녕하세요");
+        console.log(a);
     </script>
-    
 </body>
 </html>

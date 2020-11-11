@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02_Example.html</title>
+	<style>
+		.bg-green{
+			background-color: #00ff00;
+		}
+		.text-bold{
+			/*글자의 굵기를 설정가능*/
+			font-weight: bold;
+		}
+		.text-red{
+			color: #ff0000;
+		}
+
+		#one{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+<!--클래스를 여러 개 나열할 수도 있다.-->
+
+<!-- 1번 녹색배경-->
+<p class="bg-green">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero magnam autem, accusantium quos quae assumenda a facere ut quod blanditiis voluptate ratione voluptatum debitis ipsam delectus quas minima corporis dicta?</p>	
+
+<!-- 2번 녹색배경, 글자굵기 굵게-->
+<p class="bg-green text-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam itaque temporibus facilis dolor ex earum minima rerum magnam beatae praesentium, molestiae. Voluptatum cumque voluptatibus molestiae eligendi voluptate recusandae, ab nihil!</p>
+
+<!--3번 녹색배경, 글자굵기 굵게, 글자색은 빨간색-->
+<p class="bg-green text-bold text-red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni et incidunt eveniet nulla, voluptatibus, dolores reiciendis ipsam rerum aliquam ea explicabo assumenda fugit ullam quia nemo inventore. Repudiandae, autem, magnam.</p>
+
+<!--퀴즈! 2번만 특별히 글자 크기를 키우고 싶다면?-->
+<!--id 선택자를 활용하자-->
+<p class="bg-green text-bold" id="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam itaque temporibus facilis dolor ex earum minima rerum magnam beatae praesentium, molestiae. Voluptatum cumque voluptatibus molestiae eligendi voluptate recusandae, ab nihil!</p>
+
+
+</body>
+</html>

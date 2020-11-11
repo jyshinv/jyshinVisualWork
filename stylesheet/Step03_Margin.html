@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step03_Margin.html</title>
+	<style>
+
+		/*각자 지정해 주기*/
+		#mg1{
+			margin-top: 10px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			margin-left: 10px;
+		}
+
+		/*한꺼번에 지정해 주기*/
+		#mg2{
+			margin: 10px 20px 30px 40px;
+				/*순서대로 top, right, bottom, left*/
+		}
+
+		/*top, right, bottom, left가 크기가 모두 같다면?*/
+		#mg3{
+			margin: 10px;
+		}
+		#mg4{
+			margin-top: 10px;
+			margin-right: 20px;
+			margin-bottom: 30px;
+			margin-left: 40px;
+		}
+		#mg5{
+			margin: 10px 20px 30px 40px;
+		}	
+		#mg6{
+			margin-top: 20px;
+			margin-right: 40px;
+			margin-bottom: 20px;
+			margin-left: 40px;
+		}
+
+		/*두개만 있는 경우는? top,right 를 지정해주면 
+		자연스래 top=bottom, right=left 건너편에 있는 것이 복사된다.*/
+		#mg7{
+			/*margin: 20px 40px 20px 40px;*/
+			margin: 20px 40px; 
+		}
+
+		/*3개가 있는 경우는? top, right, bottom을 지정해주면 
+		right의 건너편인 left가 20d으로 복사된다.*/
+		#mg8{
+			margin: 10px 20px 30px;
+		}
+	</style>
+</head>
+<body>
+<button>버튼</button><br/>
+<button id="mg1">버튼1</button><br/>
+<button id="mg2">버튼2</button><br/>
+<button id="mg3">버튼3</button><br/>
+<button id="mg4">버튼4</button><br/>
+<button id="mg5">버튼5</button><br/>
+<button id="mg6">버튼6</button><br/>
+<button id="mg7">버튼7</button><br/>
+<button id="mg8">버튼8</button><br/>				
+</body>
+</html>

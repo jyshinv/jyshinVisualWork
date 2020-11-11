@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam1.html</title>
+</head>
+<body>
+    <button id="printBtn">출력하기</button>
+    <script>
+        let msgs=["안녕", "나야나", "반복문", "어쩌구", "저쩌구"];
+        
+        document.querySelector("#printBtn").addEventListener("click",function(){
+            for(let i=0; i<msgs.length; i++){
+                console.log(msgs[i]);
+            }
+            
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!--
+			
+			Pseudo Class (가상 클래스)
+
+			- 시각적으로 확인 할수 없지만 특정 상황해서 있다고 간주 되는 클래스 
+
+			예제)
+			<style>
+				.hover{
+					font-size = "100px";
+				}
+			</style>
+
+			이미 css가 다 적용됨!
+			<a class="hover"></a>
+			<a class="hover"></a>
+			<a class="hover"></a>
+
+			위에처럼 다 적용되게 하지말고
+			각 태그에 마우스를 올렸을 때 css를 적용시키고 싶다면? 
+			<a class="★"></a>
+			<a class="★"></a>
+			<a class="★"></a>
+
+			-> 자바스크립트 없이 동적으로 디자인을 바꾸고 싶을 때 
+			가상클래스를 사용한다. (자바스크립트 코드를 넣을 수고를 덜어준다.)
+			-> 사실 가상 클래스는 자바스크립트 코드 addEventListener
+			같은 기능으로 충분히 구현 가능하지만 css의 가상 클래스로
+			간편하게 구현할 수 있다. 
+			
+		
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_PseudoClass.html</title>
+	<style>
+
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+		}
+		/* hover 가상 클래스 선택자(hover : 마우스를 올렸을 때) */
+		/*클래스명이 box이면서 가상 클래스가 hover인 요소에 적용할 css*/
+		/*'class명이 box인 요소를 hover 했을 때 적용할 css'로 해석! */
+		.box:hover{
+			background-color: yellow;
+		}
+		/* focus 가상 클래스 선택자(focus : focus를 주었을 때) */
+		/*클래스명이 box이면서 가상 클래스가 focus(ex) tab하면 focus줌)인 요소에 적용할 css*/
+		/*'input요소에 focus했을 때 적용할 css'로 해석! */
+		input:focus{
+			background-color: yellow;
+		}
+		
+		button:focus{
+			color: red;
+		}
+		/* active 가상 클래스 선택자 (active : 버튼을 누르고 있는 경우)*/
+		button:active{
+			width: 100px;
+			height: 100px;
+		}
+
+		
+	</style>
+</head>
+<body>
+<div class="box"></div>
+<input type="text"/>
+<input type="text"/>
+<button>버튼</button>
+<button>버튼</button>
+	
+</body>
+</html>

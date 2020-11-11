@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02_Selector3.html</title>
+	<style>
+
+		/*
+		div.animals와 div .animals의 차이점?
+
+		div.animals는
+		<div class="animals"></div>			---선택됨
+		<p class="animals"></div>			---선택 x
+
+		div .animals는
+		<div>
+			<div class="animals">			---선택됨
+			<p class="animals">				---선택됨
+			<ul>
+				<li p class="animals">		---선택됨
+			</ul?
+		</div>
+		*/
+
+		.container{
+			background-color: #cecece;
+		}
+		/* .container 의 자손 중에서 p 요소 선택 */
+		.container p{ /* 띄어 쓰기 : 자손 선택 */
+			color: #ffff00;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem voluptates, velit, obcaecati ipsam consectetur iusto magnam natus qui facilis non debitis corrupti nesciunt sit. Omnis voluptatem at, soluta laboriosam dignissimos.</p>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates amet consequatur, eos impedit exercitationem aliquam qui temporibus cupiditate non illum excepturi, ad debitis dolore sapiente, neque laudantium! Doloribus, obcaecati, autem!</p>	
+</body>
+</html>
