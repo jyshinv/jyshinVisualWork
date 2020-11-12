@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_gridsystem2.html</title>
+    <!--부트 스트랩에서 css폴더 다운로드 받은 후 작업폴더에 넣어놓고 나서 bootstrp css 로딩하기-->
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <style>
+        .row>div{
+            border: 1px dashed black;
+        }
+
+        .container{
+            border : 1px solid red;
+            background-color: yellow;
+        }
+
+        .row img{
+            /*부모컨테이너를 넘지 않도록 조절*/
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>반응형 칼럼 테스트</h1>
+        <div class="row">
+            <div class="col-6">.col-6</div><!--sm~xl까지 모든 영역에 대해서 container의 50% (아래 3개는 각 영역에 따라서 차지 비율이 달라진다.)-->
+        </div>
+        <div class="row">
+            <div class="col-sm-6">.col-sm-6</div><!--화면이 넓을때(1200px 이상일 때(xl이상일 때))는 container의 50%를 차지-->
+        </div>
+        <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">.col-lg-6</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">.col-xl-6</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><img src="images/image1.png"></div>
+            <div class="col-md-6"><img src="images/image2.png"></div>
+        </div>
+        <h1>이미지 4장</h1><!--폭 100% 다 차지하고 싶다면 row안으로 안넣어도 된다.-->
+        <div class="row"><!--하나의 row를 4개의 컬럼으로 구성함-->
+            <div class="col-md-6 col-lg-3"><img src="images/image1.png"></div><!--medium device크기에서는 크기를 6 차지, large device크기에서는 크기를 3차지-->
+            <div class="col-md-6 col-lg-3"><img src="images/image2.png"></div>
+            <div class="col-md-6 col-lg-3"><img src="images/image3.png"></div>
+            <div class="col-md-6 col-lg-3"><img src="images/image4.png"></div>
+            <!--
+            숫자는 1~2까지 있음
+            col-1~12 / 모든 영역에 대해 적용
+            col-sm1 ~ 12 / sm 이상일 때 적용
+            col-md1 ~ 12 / md 이상일 때 적용
+            col-lg1 ~12 / lg이상일 때 적용
+            col-xl1 ~ 12 / xl이상일 때 적용
+            
+            <div class="col-sm-6 col-md-3"></div>의 
+            경우에 800px이면 2가지 다 존재하는 데 이렇게 
+            겹치는 경우가 생기면 무엇을 따라갈까? 가장 우측에 정의한 것을 따라감!(가장 최신에 정의한 것)
+            위의 경우엔 col-md-3을 따라간다.
+            -->
+        </div>
+    </div>
+    
+</body>
+</html>
