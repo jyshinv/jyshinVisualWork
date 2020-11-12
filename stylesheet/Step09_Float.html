@@ -1,3 +1,4 @@
+<!--float는 띄우겠다!-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,22 +16,31 @@
 			background-color: yellow;
 			border: 1px solid red;
 		}
-		#one{
+		.bg{
+			background-color:green;
+		}
+
+		/*float : left는 왼쪽에 살짝 떠있는 상태, float : right는 오른쪽에 살짝 떠있다*/
+		/*float된 요소들은 자기가 필요한 만큼의 최소한의 크기만을 가지고 있어야 하므로 위의 .box 코드를 이용해 */
+		#one{ 
 			float: left;
 		}
 		#two{
 			float: right;
 		}
+	
 	</style>
 </head>
 <body>
 <div class="container">
 	<h1>float 테스트</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem odio commodi, saepe quidem, nobis illo neque repellat, ipsum laboriosam delectus laudantium. Eligendi accusantium odio sint hic, quis aut a autem?</p>
-	<div class="box" id="one">div1</div>
+	<div class="box" id="one">div1</div><!--div는 폭100%차지한다고 하는데 실제로 보면 오른쪽에 바로 아랫줄 p태그가 있음! 하지만 box와 one css로 인해 왼쪽으로 가서 떠있다.-->
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est nemo blanditiis ipsam, voluptates vitae, reprehenderit optio tempore consequatur laborum earum officia repellendus error consequuntur, eos voluptatum perferendis voluptate vel. Placeat.</p>
+	<!--p태그는 붕뜬 div 아래로 위치한다. 겹쳐있는 상태이다! 하지만 contents 자체는 div에 깔리지 않는다.-->
 	<div class="box" id="two">div2</div>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure reiciendis, ex odio temporibus ea earum ipsum, a provident enim iusto eum ullam nostrum exercitationem quaerat hic molestiae. Ipsa, repellat, hic.</p>
+	
 </div>
 </body>
 </html>

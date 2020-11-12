@@ -4,6 +4,21 @@
 	<meta charset="UTF-8">
 	<title>Step12_Text.html</title>
 	<style>
+		/*
+		[글자 디자인은 상속된다!]
+		
+		글자 크기를 따로 지정하지 않으면 default는 16px
+		<div>
+			<p>
+			<p>
+			<p>
+		<div>
+		
+		이러한 구조면 div에만 css를 적용해주면 p로 상속된다. 
+		글자와 관련해서는 자식요소는 부모요소의 css 디자인을 상속받는다.
+
+
+		*/
 		.wrapper1{
 			/* [ 글자 스타일 ]
 				normal | italic
@@ -15,6 +30,7 @@
 			   상속된다. 
 			*/
 			font-family: "Times New Roman", Consolas, NanumGothic, Gothic, serif, sans-sefif;
+			/*위처럼 글씨체에 공백이 있다면? double따옴표로 감싸줘야한다. */
 			/*
 				[글자의 굵기]
 				normal | bold
@@ -41,7 +57,7 @@
 		.wrapper2{
 			/* 
 				[ 글자 변환 ]
-				none | uppercase | lowercase | capitalize
+				none(default) | uppercase(모두 대문자) | lowercase(모두 소문자) | capitalize(모든 단어의 첫글자만 대문자)
 				상속된다. 
 			*/
 			text-transform: capitalize;

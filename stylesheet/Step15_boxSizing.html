@@ -5,6 +5,8 @@
 	<title>Step15_boxSizing.html</title>
 	<style>
 		.box{
+
+			/*기본적으로 width와 heignt의 크기는 컨텐츠의 크기만 가짐 */
 			width: 100px;
 			height: 100px;
 			background-color: yellow;
@@ -13,13 +15,14 @@
 			margin: 10px;
 			/* 
 			content-box (default) | border-box 
+
 			
-			content-box : width 와 height 에 아무것도 포함하지 않음
+			content-box : width 와 height 에 아무것도 포함하지 않음(defalut)
 
 			border-box : width 와 height 에 padding 과 border 포함
 			
 			*/
-			box-sizing: margin-box;
+			box-sizing: content-box; 
 		}
 	</style>
 </head>

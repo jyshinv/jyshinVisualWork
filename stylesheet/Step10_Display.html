@@ -7,7 +7,26 @@
 		#one{
 			/* 문서 객체는 만들어 졌지만 공간을 차지하지 않고
 			보이지 않게 하기  */
-			display: none;
+			display: none; /* block|inline|inline-block|table-cell */
+			/*
+			display : inline -> 기본 값으로, 요소를 inline 요소처럼 표시한다. 따라서 앞뒤로 줄바꿈 되지 않는다.
+			
+			display : block -> 요소를 block 요소처럼 표시한다. 따라서 요소 앞 뒤로 줄바꿈 된다.
+
+			display : none  -> 박스가 생성되지 않는다. 따라서 공간을 차지하지도 않는다.
+
+			display : inline-block -> 요소는 inline인데 내부는 block처럼 표시한다. 즉, 박스 모양이 inline 처럼 옆으로 늘어선다.
+
+			block 요소를 display : none 했다가 다시 요소에 맞게 되돌아오게 하려면 display : block
+			inline 요소를 display : none 했다가 다시 요소에 맞게 되돌아오게 하려면 display : inline
+
+			inline요소는 text 성격을 가지고 있다.
+			
+			inlin요소와 txt 둘다
+			1. baseline을 기반으로 쌓이고
+			2. 브라우져가 요소크기보다 작아지면 흘러내린다.
+
+			*/
 		}
 	</style>
 </head>

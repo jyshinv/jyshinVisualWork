@@ -16,6 +16,33 @@
 
 			인라인 css 가중치 : 1000 점
 			!important 가중치 : 10000점 
+
+			[요소명 1개당 점수를 주어야 한다.]
+
+			ul>li{} : 2점
+
+			ul>li>a{} : 3점
+
+			.wrapper{} : 10점
+
+			.wrapper ul>li{} : 10점
+			
+			#one{} : 100점 
+
+			*단, 아무리 많은 요소들을 나열하더라도 갭차이는 극복불가 
+			ex) 요소명을 아무리 많이 써도 클래스 선택자는 못이기고 
+			선택자를 아무리 많이 써도 아이디 못이김*
+
+			quiz) 이 경우 무슨색이 적용될까?
+			ul{color:red;}
+
+			ul>li{color:green;} 
+
+			ul>li>a{color:blue;} 
+
+			가중치가 3점인 blue가 적용된다. 
+
+			
 		*/
 		li{ background-color: yellow; } /* 1 */
 		
@@ -27,7 +54,7 @@
 
 		#one{ background-color: pink; } /* 100 */
 		
-		#one{ background-color: white !important; } /* 10000 */
+		#one{ background-color: white !important; } /* 10000 얘를 이길 수 있는 애는 없음! 이게 지정되어 있으면 상속도 받지 못한다! */
 	</style>
 </head>
 <body>

@@ -16,10 +16,14 @@
 	</style>
 </head>
 <body>
-<h1>img 요소는 inline 요소 이지만 inline-block 요소 처럼 동작한다.</h1>
+<h1>img 요소는 inline 요소 이지만 inline-block 요소 처럼 동작한다.</h1><!--inline요소는 baseline에 맞춰서 쌓인다.-->
+<!--아래 요소들은 떨어져있음 코드 내 개행이나, 공백이 몇개든간에 개행,공백 1개 이상은 실제로 요소간 한칸 띄어지는 효과로 작용한다.-->
 <img src="images/1.jpg"/>
 <img src="images/2.jpg"/>
 <span>span 요소</span>
 <span>span 요소</span>	
+
+<!--아래 요소들은 따닥따닥 붙음-->
+<img src="images/1.jpg"/><img src="images/2.jpg"/><span>span 요소</span><span>span 요소</span>	
 </body>
 </html>

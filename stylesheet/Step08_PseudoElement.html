@@ -5,19 +5,21 @@
 	<title>Step08_PseudoElement.html</title>
 	<style>
 		/* 가상요소 선택자 */
-		p:first-letter{
+		p:first-letter{ /*p요소의 첫번째 글자의 디자인 결정*/
 			font-weight: bold;
 			color: red;
 		}
-		#one:first-line{
+		#one:first-line{ /*id가 one인 첫줄의 디자인 결정*/
 			background-color: yellow;
 		}
+
+		/*<p>(before)abcd(after)</p>  -> before와 after 위치 확인!*/
 		.quote:before{
-			content:"'";
+			content:"'"; /*single따옴표를 넣겠다.*/
 			color: red;
 		}
 		.quote:after{
-			content:"'";
+			content:"'"; /*single따옴표를 넣겠다.*/
 			color: blue;
 		}
 	</style>

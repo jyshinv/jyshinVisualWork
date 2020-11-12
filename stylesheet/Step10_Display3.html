@@ -14,21 +14,27 @@
 		#one{
 			border: 1px solid red;
 			display: inline;
+			line-height: 500px;
 		}
 		/*
 			[ inlien block 요소 ]
-			- width, height, maring, padding 모두 가능
+			- width, height, maring, padding 모두 지정 가능
 			- 왼쪽과 오른쪽에 다른 요소가 올수 있다.
 		*/
 		#two{
 			border: 1px solid blue;
 			display: inline-block;
+			/* margin-top : 100px; */
+			/* margin-bottom : 100px; */
 		}
 	</style>
 </head>
 <body>
 <h1>inline vs inline-block</h1>
-<div id="one">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</div>
-<div id="two">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</div>	
+<div id="one">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</div><!--브라우저 폭을 이 요소의 크기보다 좁히면 이 div와 contents는 흘러 내려간다. inline처럼 행동한다.-->
+<!--위 div의 margin값을 키우려면 line-height로 키우는 수밖에 없다.-->
+
+<div id="two">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</div><!--브라우저 폭을 이 요소의 크기보다 좁히면 이 div의 크기가 커지며 contents만 흘러 내려간다.-->
+<!--위 div의 margin값을 키우려면 크기를 키우려면 margin값을 키우면 된다.-->
 </body>
 </html>

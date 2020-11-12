@@ -17,14 +17,15 @@
 		.wrapper{
 			border: 1px solid blue;
 			background-color: #999;
-			/* float 된 자식 요소를 감쌀수 있도록 설정 */
+			/* float 된 자식 요소를 감쌀 수 있도록 설정 */
+			/*아래 코드가 없으면 float된 자식 요소를 감쌀 수 없다. 없애서 테스트해보기*/
 			overflow: auto;
 		}
 	</style>
 </head>
 <body>
 <h1>block 요소를 inline 요소 처럼 한줄로 배치</h1>
-<div class="wrapper">
+<div class="wrapper"><!--이 div의 높이는 자식요소에 따라 결정된다.-->
 	<div class="box">div1</div>
 	<div class="box">div2</div>
 	<div class="box">div3</div>
