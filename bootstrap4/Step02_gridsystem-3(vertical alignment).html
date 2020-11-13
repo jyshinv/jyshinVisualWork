@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_gridsystem-3(vertical alignment).html</title>
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <style>
+        .row{
+            height:100px;
+            background-color: rgb(218, 189, 189);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>row가 start 정렬</h1>
+        <div class="row border-primary align-items-start">
+            <div class="col border bg-info">col1</div>
+            <div class="col border bg-info">col2</div>
+            <div class="col border bg-info">col3</div>
+        </div>
+        <h1>row가 가운데 정렬</h1>
+        <div class="row border-primary align-items-center">
+            <div class="col border bg-info">col1</div>
+            <div class="col border bg-info">col2</div>
+            <div class="col border bg-info">col3</div>
+        </div>
+        <h1>row가 end정렬</h1>
+        <div class="row border-primary align-items-center">
+            <div class="col border bg-info">col1</div>
+            <div class="col border bg-info">col2</div>
+            <div class="col border bg-info">col3</div>
+        </div>
+        <h1>col들이 self정렬</h1>
+        <div class="row border-primary">
+            <div class="col border bg-info align-self-start">col1</div>
+            <div class="col border bg-info align-self-center">col2</div>
+            <div class="col border bg-info align-self-end">col3</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
