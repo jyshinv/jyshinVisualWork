@@ -17,15 +17,18 @@
 			font-size: 3em; /* inherit 된 글자 크기의 3배 */
 		}
 		.box{
-			width: 10em;
+			width : 10em;
 			height: 10em;
 			background-color: yellow;
 			margin-left: 5em;
 			border: 1px solid red;
 		}
+		
+
 		.wrapper{
-			font-size: 20px;
+			font-size: 30px;
 		}
+
 	</style>
 </head>
 <body>
@@ -35,9 +38,23 @@
 <p id="two">ABCD 글자크기:16px</p>
 <p id="three">ABCD 글자크기:32px</p>
 <p id="four">ABCD 글자크기:48px</p>
-<div class="box"></div>
-<div class="wrapper">
+
+<!--이부분-->
+<!--four의 글자크기는 상속과 3em의 결과 48px-->
+<div id="four">ABCD글자크기:48px
+	<!--box의 width,height는 각각 10em 이므로 four의 font-size인 48px의 10배인 약 480px가 된다. -->
 	<div class="box"></div>
+</div>
+
+
+<div class="box">와우</div>
+
+<!--wrapper의 font-size는 30px-->
+<div class="wrapper">
+	<!--box의 width, height는 각각 10em 이므로 wrapper의 font-size인 30px의 10배인 약 300px가 된다.-->
+	<div class="box">와우</div>
 </div>	
+
+
 </body>
 </html>

@@ -1,11 +1,25 @@
+<!--블로그 포스팅 완료 절대 건들지 말것!!!-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step04_alert.html</title>
+    <!--부트스트랩 css넣기-->
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <!--Head 혹은 body에 홈페이지-getStarted-JS-Bundle에서 복붙 후 붙여넣는다.-->
+
+    <!--JQuery 로딩해오기-->
+    <script src="./js/jquery-3.5.1.js"></script>
+    
+    <!--부트스트랩 jquery와 부트스트랩 js 넣기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+     crossorigin="anonymous"></script>
+    
+    
     
 </head>
 <body>
@@ -22,9 +36,9 @@
         <div class="alert alert-primary">
             파랑색입니당    
         </div>
+
         <div>제거 가능한 Alert</div>
-        
-        <p>
+            <p>
             아래의 alert는 bootstrap4 에서 미리 준비된 javascript
             이용해서 동작이 되는 alert 이다.
             동작하기 위해서는 jquery와 bootstrap javascript를 순서대로
@@ -32,25 +46,21 @@
         </p>
         <div class="alert alert-warning alert-dismissible">
             <strong>주의!</strong> 컨텐츠가 삭제 됩니다.
-            <!--class close를 통해 자연스롭게 버튼이 들어간다.-->
+            <!-- 주석-> class close를 통해 자연스롭게 버튼이 들어간다. -->
             <button class="close" data-dismiss="alert">&times;</button>
-        </div>      
+        </div>   
+       
+            
     </div>
 
-    <!--위의 alert기능을 사용하기 위해서는 Head 혹은 body에 홈페이지-getStarted-JS-Bundle에서 복붙 후 붙여넣는다.-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-     crossorigin="anonymous"></script>
-
     <script>
+        //위에서 만든 alert 기능을 jQuery로 해결해보자!
         //알림 닫기 버튼을 누르면 실행할 함수 등록
         //"close.bs.alert" 는 bootstrap4에서 임의로 발생시키는 이벤트이다.
-        // $(".alert").on("close.bs.alert",funcion(){
-        //     //여기 완성해야함!
-        // });
+        $(".alert").on("closed.bs.alert", function(){
+            // 원하는 작업이 있다면 여기서 하면 된다.
+            alert("close!");
+        });
 
     </script>
 </body>
