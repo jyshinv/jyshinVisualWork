@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01_hello.html</title>
+
+    <!--JQuery 로딩해오기-->
+    <script src="./js/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+    <p>1</p>
+    <p>2</p>
+    <p class="my-class">3</p>
+    <p class="my-class">4</p>
+    <p class="my-class">5</p>
+    <p class="my-class">6</p>
+    <button id="changeBtn">새로고침</button>
+    <button id="changeBtn2">새로고침2</button>
+
+    <script>
+
+        //버튼을 눌렀을 때 실행할 함수 등록
+        document.querySelector("#changeBtn").addEventListener("click",function(){
+            //모든 p요소의 참조값을 배열에 담아와서
+            let divs = document.querySelectorAll("p");
+            //반복문 돌면서 p 모든 요소에 innerText바꿔주기
+            for(let i=0; i<divs.length; i++){
+                divs[i].innerText = "김구라";
+            }
+        });
+
+        //위와 같은 역할을 하는 jQuery 코드
+        //위의 모든 코드를 간단하게 구현할 수 있다. 
+        $("#changeBtn2").on("click",function(){
+            $("p").text("해골");
+        });
+        
+
+        //$()                       는 document.querySelector() or document.querySelectorAll() 와 같은 의미
+        //$().text                  는 document.querySelector().innerText or document.querySelectorAll().innerText 와 같은 의미
+        //$().css("color","red")    는 document.querySelector().style.color = "red"
+
+
+    </script>
+    
+</body>
+</html>

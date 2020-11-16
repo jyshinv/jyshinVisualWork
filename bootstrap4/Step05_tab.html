@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step05_tab.html</title>
-    <!--bootstrap css로딩 heap에만 해야한다.-->
+    <!--bootstrap css로딩 heap에만 작성 해야한다.-->
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <!--javascript가 필요한 ui를 위한 jquery, bootstrap js로딩, head와 body에서 해도 된다.-->
+    <!--javascript가 필요한 ui를 위한 jquery, bootstrap js로딩, head와 body에서 작성해도 된다.-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
         crossorigin="anonymous"></script>
@@ -20,6 +20,8 @@
         <h1>nav 요소중에 tab 만들기</h1>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
+              <!--아래 코드에서 active의 역할 로딩했을 때 제일 먼저 뜨는 창으로 설정한다. 여러 탭들 중 한개에 active를 작성하면 된다.-->
+              <!--data-toggle의 tab을 작성함으로써 탭기능을 사용할 수 있다.-->
               <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
             </li>
             <li class="nav-item" role="presentation">

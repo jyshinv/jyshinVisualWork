@@ -1,72 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step03_form.html</title>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-</head>
-<body>
-    <div class="container">
-        <h1>폼 요소</h1>
-        <form action="loginAction">
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="text" class="form-control" id="email"/>
-            </div>
-            <div class="form-group">
-                <label for="pwd">비밀번호</label>
-                <input type="password" class="form-control" id="pwd"/>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"/>아이디 저장
-                </label>
-            </div>
-            <button class="btn btn-primary" type="submit">로그인</button>
-            <button class="btn btn-danger" type="reset">취소</button>
-        </form>
-        <h1>칼럼안의 form</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-6 bg-light">
-                <h2>로그인 폼 입니다.</h2>
-                <form action="loginAction">
-                    <div class="form-group">
-                        <label for="email">이메일</label>
-                        <input type="text" class="form-control" id="email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">비밀번호</label>
-                        <input type="password" class="form-control" id="pwd"/>
-                    </div>
-                    <div class="form-group form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"/>아이디 저장
-                        </label>
-                    </div>
-                    <button class="btn btn-primary" type="submit">로그인</button>
-                    <button class="btn btn-danger" type="reset">취소</button>
-                </form>                   
-            </div> <!-- .col-md-6 -->
-        </div> <!-- .row -->
-        <h1>form  요소를 한줄에 표시 하기</h1>
-        <form action="">
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" class="form-control" 
-                        placeholder="아이디 입력..."/>
-                </div>
-                <div class="col">
-                    <input type="password" class="form-control"
-                        placeholder="비밀번호 입력..."/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="text" class="form-control" id="email"/>
-            </div>
-            <button type="submit" class="btn btn-secondary">가입</button>
-        </form>
-    </div><!-- .container -->
-</body>
-</html>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!--좌상단의 대표 아이콘 혹은 대표 링크-->
+    <a class="navbar-brand" href="#">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+        </svg>
+    </a>
+    <!--
+        우상단에 생기는 메뉴 버튼
+        data-toggle="collapse"가 있어야 동작을 한다.
+        data-toggle="#아이디" 접었다 펼쳤다 할 컨텐츠 아이디를 참조 해야한다.
+    -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!--active가 있는 곳이 밝게 나오는 곳-->
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+</nav>
