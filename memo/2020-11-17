@@ -1,0 +1,30 @@
+
+
+
+
+----추가 완료----
+이클립스 초기 설정
+window prefer enc workspace utf-8
+window prefer font basic-text font - 더블클릭 후 클자크기 조정
+
+우측상단-open perspective - java,git 추가
+
+커피콩 - 웹개발환경
+자바 - 자바환경
+git - git 환경
+
+java project - test package - MainClass.java file(java)
+                                └여기서 java source code역할을 하는 text 파일
+
+
+mainclass - 우클릭 - runas - 2.javaApplication 으로 run 하기 
+
+디버깅 하는법
+1. debug as - javaApplication
+
+한줄 실해나는 법 step-over(f6)
+실행 멈추는 법 빨강색 네모 모양
+연두색의 의미는 다음에 실행할 코드라는 뜻
+//지금 작성하고 있는 프로그램도 하나의 실행 프로그램!
+//실행 한다면 운영체제에서 프로세스를 하나 할당해준다.
+
